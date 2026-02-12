@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Feature branch content
-=======
 Development branch content
->>>>>>> tejash-dev
