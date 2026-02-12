@@ -1,15 +1,12 @@
 import express, { Request, Response } from "express";
-import { login } from "./controller/login";
+import authRoutes from "./routes/authRouter";
 const app = express();
+const PORT = 3000;
 
-const PORT = 5000;
+app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, Manush Patel this side");
-});
-
-app.get("/login", login);
+app.use("/auth", authRoutes);
 
 app.listen(PORT, () => {
-  console.log(`server is running on ${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT}`);
 });

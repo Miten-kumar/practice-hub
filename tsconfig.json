@@ -1,4 +1,4 @@
-{
+{ 
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
@@ -11,8 +11,6 @@
     "target": "es2020",
     "types": [],
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     // For nodejs:
