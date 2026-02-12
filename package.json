@@ -1,0 +1,26 @@
+{
+  "name": "practice-hub",
+  "version": "1.0.0",
+  "description": "A personal engineering practice repository focused on TypeScript, Node.js, system design, and real-world development patterns.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miten-kumar/practice-hub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miten-kumar/practice-hub/issues"
+  },
+  "homepage": "https://github.com/Miten-kumar/practice-hub#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "express": "^5.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
