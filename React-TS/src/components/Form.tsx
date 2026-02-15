@@ -1,27 +1,82 @@
 import { useState } from "react";
 
-interface formProps{
-    name:string;
-    mobile:number;
+interface User {  
+    name: string;
+    email: string;
+    mobile: string;
+    password: string;
 }
 
-export const Form() => {
+export const Form = () => {
+    const [user, setUser] = useState<User>({
+        name: "",
+        email: "",
+        mobile: "",
+        password: "",
+    });
 
-    const[formData,setFormdata] = useState<formProps>({name:"",mobile:0})
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setUser((prev) => ({ ...prev, [name]: value }));
+    };
 
-    const function handleSubmit(event: React.FormEvent<HTMLFormElement>){
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("Submitted user:", user);  
+    };
 
-        const{name,mobile} = event.target;
-        setFormdata({...formData,name,mobile})
-    }
-
-    return(
+    return (
         <>
             <h2>Form</h2>
-
-            <form action="">
-                <input type="text">Enter Your Name</input>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="name">Name:</label>
+                    <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="Enter name"
+                        value={user.name}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="Enter email"
+                        value={user.email}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="mobile">Mobile:</label>
+                    <input
+                        id="mobile"
+                        type="tel"
+                        name="mobile"
+                        placeholder="Enter mobile"
+                        value={user.mobile}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        id="password"
+                        type="password"  
+                        name="password"
+                        placeholder="Enter password"
+                        value={user.password}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <button type="submit">Submit</button>
             </form>
         </>
-    )
-}
+    );
+};
+
+

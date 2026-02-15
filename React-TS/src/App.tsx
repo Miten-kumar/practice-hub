@@ -1,6 +1,8 @@
 import { Card } from "./components/Card"
 import { Counter } from "./components/Counter"
-import { Form } from "./components/Form"
+import {Form} from "./components/Form"
+import {Form_task} from "./Pages/Form_task"
+
 
 
 function App() {
@@ -20,7 +22,15 @@ function App() {
       </div>
 
       <div>
-        <Form name="manthan"/>
+        <Form/>
+      </div>
+
+      <br/>
+      <br />
+
+      <h1>Form  for Task</h1>
+      <div>
+        <Form_task/>
       </div>
     </>
   )
