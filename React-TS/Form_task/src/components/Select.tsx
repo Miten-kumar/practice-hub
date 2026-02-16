@@ -10,7 +10,7 @@ interface SelectProps {
 
 const Select = ({ label, name, value, options, onChange }: SelectProps) => {
   return (
-    <div className="input-group">
+    <div>
       <label htmlFor={name}>{label}</label>
       <select id={name} name={name} value={value} onChange={onChange}>
         <option value="" disabled>

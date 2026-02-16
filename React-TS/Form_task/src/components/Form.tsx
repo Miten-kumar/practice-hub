@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface User {  
-    name: string;
+    userName: string;
     email: string;
     mobile: string;
     password: string;
@@ -9,7 +9,7 @@ interface User {
 
 export const Form = () => {
     const [user, setUser] = useState<User>({
-        name: "",
+        userName: "",
         email: "",
         mobile: "",
         password: "",
@@ -30,13 +30,13 @@ export const Form = () => {
             <h2>Form</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="userName">UserName:</label>
                     <input
-                        id="name"
+                        id="userName"
                         type="text"
-                        name="name"
+                        name="userName"
                         placeholder="Enter name"
-                        value={user.name}
+                        value={user.userName}
                         onChange={handleInputChange}
                     />
                 </div>

@@ -15,7 +15,7 @@ export const Form_task = () => {
     name: "",
     country: "",
     accept: false,
-  });
+  }); 
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;

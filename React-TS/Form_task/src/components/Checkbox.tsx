@@ -9,8 +9,8 @@ interface CheckboxProps {
 
 const Checkbox = ({ label, name, checked, onChange }: CheckboxProps) => {
   return (
-    <div className="checkbox-group">
-      <label>
+    <div >
+        <label>
         <input
           type="checkbox"
           name={name}

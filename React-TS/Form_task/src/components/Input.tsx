@@ -9,10 +9,9 @@ interface InputProps {
 
 const Input = ({ label, name, value, onChange }: InputProps) => {
   return (
-    <div className="input-group">
+    <div>
       <label htmlFor={name}>{label}</label>
       <input
-        id={name}
         name={name}
         value={value}
         onChange={onChange}
