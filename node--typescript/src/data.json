@@ -1,0 +1,6 @@
+[
+  { "name": "one", "age": 3, "role": "user" },
+  { "name": "two", "age": 3, "role": "user" },
+  { "name": "three", "age": 5, "role": "user" },
+  { "name": "four", "age": 3, "role": "admin" }
+]
