@@ -16,7 +16,7 @@ export const usePerformanceMonitor = (componentName: string) => {
     const endTime = performance.now();
     const duration = endTime - startTime.current;
 
-    console.log(`Render #${renderCount.current} took ${duration.toFixed(2)}ms`);
+    console.log(`${componentName}Render #${renderCount.current} took ${duration.toFixed(2)}ms`);
 
     if (duration > 16) { 
        console.warn(`! Render is too slow.`);
