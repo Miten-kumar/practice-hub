@@ -1,0 +1,79 @@
+db design principles
+	duplicate information (also called redundant data) is bad
+	correctness and completeness of information is important
+	
+
+A good database design is, therefore, one that:
+		Divides your information into subject-based tables to reduce redundant data.
+		Provides Access with the information it requires to join the information in the tables together as needed.
+		Helps support and ensure the accuracy and integrity of your information.
+		Accommodates your data processing and reporting needs.
+
+
+The design process
+		Determine the purpose of your database   
+		Find and organize the information required    
+		Divide the information into tables   
+		Turn information items into columns   
+		Specify primary keys   
+		Set up the table relationships   
+		Refine your design   
+		Apply the normalization rules   
+
+
+
+https://datalemur.com/questions/card-launch-success
+
+SELECT 
+card_name, 
+FIRST_VALUE(issued_amount) over (
+PARTITION by card_name order by issue_year,issue_month) as issued_amount
+from monthly_cards_issued;
+
+https://datalemur.com/questions/rolling-average-tweets
+
+SELECT 
+user_id,
+tweet_date,
+round(avg(tweet_count) 
+over (PARTITION by user_id order by tweet_date rows BETWEEN 2 PRECEDING and CURRENT row),2) as rolling_avg_3d
+FROM tweets;
+
+
+https://medium.com/yavar/install-and-configure-postgresql-and-pgadmin-on-ubuntu-20-04-22-04-52c52c249b9e
+
+
+https://www.w3schools.com/postgresql/postgresql_create_table.php
+
+
+https://www.geeksforgeeks.org/dbms/introduction-of-database-normalization/
+
+
+https://support.microsoft.com/en-us/office/database-design-basics-eb2159cf-1e30-401a-8084-bd4f9c9ca1f5
+
+
+https://namastedev.com/blog/database-design-and-normalization/
+
+
+https://popsql.com/blog/complex-sql-queries
+
+
+https://www.geeksforgeeks.org/dbms/indexing-in-databases-set-1/
+
+
+https://www.geeksforgeeks.org/sql/window-functions-in-sql/
+
+
+
+https://datalemur.com/sql-tutorial/sql-aggregate-window-functions
+
+
+https://www.w3schools.com/sql/sql_aggregate_functions.asp
+
+
+https://medium.com/@patrikstrausz17/part3-postgresql-relationships-creating-and-managing-database-relationships-5e1eaea769d8
+
+
+
+
+https://www.tutorialspoint.com/postgresql/postgresql_constraints.htm
