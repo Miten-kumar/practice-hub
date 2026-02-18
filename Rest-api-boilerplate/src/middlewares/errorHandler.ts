@@ -11,6 +11,7 @@ export const errorHandler = (
   res: Response,
   next: NextFunction,
 ) => {
+  console.error(`Error: ${err.message} at ${new Date().toISOString()}`);
   res.status(500).send({
     message: err.message || "Something went wrong!",
     statusCode: 500,

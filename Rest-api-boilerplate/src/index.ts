@@ -7,13 +7,12 @@ import moviesRouter from "./routes/movie.route";
 const app = express();
 
 console.log(`Environment Variables: ${JSON.stringify(env)}`);
+app.use(logger);
 
 app.use("/movies", moviesRouter);
 
-app.use(logger);
-
 app.use(errorHandler);
 
-app.listen(env.PORT, () => {
+app.listen(Number(env.PORT), () => {
   console.log(`Server is running on port ${env.PORT}`);
 });
