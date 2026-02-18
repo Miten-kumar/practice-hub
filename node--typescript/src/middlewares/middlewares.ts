@@ -11,10 +11,15 @@ export const middleware: RequestHandler = (req: Request, res: Response) => {
   console.log("Response sent");
 };
 
-export const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
+export const globalErrorHandler: ErrorRequestHandler = (
+  err,
+  req,
+  res,
+  next,
+) => {
   console.error(err.stack); // Log the error stack for debugging
   const statusCode = err.statusCode || 500;
-  const message = err.message || 'Internal Server Error';
+  const message = err.message || "Internal Server Error";
   res.status(statusCode).send({
     status: statusCode,
     message: message,
@@ -30,13 +35,16 @@ export const loggerMiddleware = (
   next();
 };
 
-
-export const authenticate = (req:Request, res:Response, next:NextFunction) => {
-  const token = req.headers['authorization'];
-  if (!token || token !== 'securetoken') {
+export const authenticate = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const token = req.headers["authorization"];
+  if (!token || token !== "securetoken") {
     console.log("user Unauthorized");
-    
-    return res.status(401).send('Unauthorized');
+
+    return res.status(401).send("Unauthorized");
   }
   next();
 };

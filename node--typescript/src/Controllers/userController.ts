@@ -1,6 +1,4 @@
-import {
-  RequestHandler,
-} from "express";
+import { RequestHandler } from "express";
 import {
   ApiResponse,
   TypedRequestbodyUser,
@@ -8,8 +6,7 @@ import {
   UserDetails,
 } from "../interfaces";
 import data from "../data.json";
-import {z} from "zod"
-
+import { z } from "zod";
 
 export const getAllUser: RequestHandler<{}, ApiResponse<UserDetails>> = (
   req,
@@ -46,14 +43,13 @@ export const getUserById: RequestHandler<
   }
 };
 
-
 const userSchema = z.object({
-  name :z.string(),
-  age :z.number(),
-  role :z.string()
-})
+  name: z.string({ error: "it should be string" }),
+  age: z.number({ error: "it should be number" }),
+  role: z.enum(["admin", "user"], { error: "it should be admin or user" }),
+});
 
-export const adduser = (
+export const adduser = async (
   req: TypedRequestbodyUser<UserDetails>,
   res: TypedResponse<ApiResponse<UserDetails>>,
 ) => {
@@ -61,20 +57,29 @@ export const adduser = (
     console.log(req.body);
     const { age, name, role } = req.body;
 
-    console.log(typeof age ,"sss", typeof name ,"gtgtgtgt", typeof role,"hhyhyh");
-    
-    
-    const newUser = userSchema.parse({
+    const {
+      success,
+      data: newUser,
+      error,
+    } = userSchema.safeParse({
       age: age,
       name: name,
       role: role,
     });
 
-    console.log(newUser,"yhbhbhbh");
-    
+    if (!success) {
+      console.log(error.message, "nhjnjnj");
+      return res.status(400).json({
+        message: "error",
+        data: { message: error.flatten(), type: "response validation" },
+      });
+    }
+
     data.push(newUser as UserDetails);
 
-    res.status(200).json({ data: newUser as UserDetails, message: "success" });
+    return res
+      .status(200)
+      .json({ data: newUser as UserDetails, message: "success" });
   } catch (error) {
     res.status(400).json({
       message: "error",
