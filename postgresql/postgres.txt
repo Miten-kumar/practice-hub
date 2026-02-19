@@ -77,3 +77,196 @@ https://medium.com/@patrikstrausz17/part3-postgresql-relationships-creating-and-
 
 
 https://www.tutorialspoint.com/postgresql/postgresql_constraints.htm
+
+
+
+https://salsita.github.io/node-pg-migrate/getting-started
+
+
+https://node-postgres.com/guides/project-structure
+
+
+
+https://medium.com/@jaegoo.jho/why-we-use-a-prepared-statement-146e2789c912
+
+
+https://dev.mysql.com/doc/refman/8.4/en/sql-prepared-statements.html
+
+
+https://www.geeksforgeeks.org/postgresql/postgresql-joins/
+
+https://www.w3schools.com/postgresql/postgresql_joins.php
+
+
+
+🔥 1️⃣ Top 10 Revenue Generating Products
+{Using the orders table:
+Calculate total revenue per product (quantity × unit_price)
+Join with products to get product name
+Return:
+product_id
+product name
+total quantity sold
+total revenue
+Sort by total revenue in descending order
+Limit to top 10
+👉 This will require:
+JOIN
+GROUP BY
+ORDER BY
+Aggregation}
+
+
+select 
+p.product_id, 
+p.name as product_name,
+o.unit_price,
+sum(o.quantity) as total_quantity_sold,
+sum(o.quantity*o.unit_price) as total_revenue
+from orders as o
+join products as p on p.product_id = o.product_id
+group by p.product_id,o.unit_price
+order by total_revenue desc
+limit 10
+
+
+2️⃣ Users Who Spent More Than Average User Spending
+{Steps required:
+First calculate total spending per user
+Then calculate average spending across all users
+Return users whose total spending is greater than that average
+Return:
+user id
+name
+total spent
+number of products purchased
+👉 Requires:
+GROUP BY
+Subquery (for average)
+HAVING or WHERE with subquery
+JOIN between users and orders}
+
+SELECT 
+    u.id AS user_id,
+    u.name,
+    SUM(o.quantity * o.unit_price) AS total_spent,
+    COUNT(DISTINCT o.product_id) AS products_purchased
+FROM users u
+JOIN orders o 
+    ON u.id = o.user_id
+GROUP BY u.id, u.name
+HAVING SUM(o.quantity * o.unit_price) > (
+    SELECT AVG(user_total)
+    FROM (
+        SELECT SUM(quantity * unit_price) AS user_total
+        FROM orders
+        GROUP BY user_id
+    ) AS avg_table
+)
+ORDER BY total_spent DESC;
+
+
+3️⃣ Products With Rating Above Overall Average Rating
+{
+Steps:
+Calculate overall average rating from reviews table
+Find products whose average rating is higher than overall average
+Join with products table to get product name
+Return:
+product name
+average rating
+total reviews
+👉 Requires:
+Subquery for global average
+GROUP BY product_id
+HAVING clause
+JOIN
+}
+
+
+SELECT 
+    p.name AS product_name,
+    AVG(r.rating) AS average_rating,
+    COUNT(r.review_id) AS total_reviews
+FROM products p
+JOIN reviews r 
+    ON p.product_id = r.product_id
+GROUP BY p.product_id, p.name
+HAVING AVG(r.rating) > (
+    SELECT AVG(rating) 
+    FROM reviews
+)
+ORDER BY average_rating DESC;
+
+
+4️⃣ Users Who Gave 5-Star Reviews AND Purchased More Than 1 Quantity
+{
+Find users who:
+Gave rating = 5
+AND in their order, quantity purchased was greater than 2
+Return:
+user name
+product name
+quantity purchased
+rating
+👉 Requires:
+JOIN users + orders + reviews + products
+Multiple filtering conditions
+Understanding that user_id & product_id connect both tables
+}
+
+SELECT 
+    u.name AS user_name,
+    p.name AS product_name,
+    o.quantity,
+    r.rating
+FROM users u
+JOIN orders o 
+    ON u.id = o.user_id
+JOIN reviews r 
+    ON u.id = r.user_id 
+    AND o.product_id = r.product_id
+JOIN products p 
+    ON p.product_id = o.product_id
+WHERE r.rating = 5
+  AND o.quantity > 1;
+
+
+
+5️⃣ Highest Rated Product Among Top 10 Most Expensive Products
+{
+Steps:
+First select top 10 most expensive products (based on price)
+Among those 10, calculate average rating
+Return the product with the highest average rating
+Return:
+product name
+price
+average rating
+total reviews
+👉 Requires:
+Subquery (top 10 expensive)
+JOIN with reviews
+GROUP BY
+ORDER BY
+LIMIT 1
+}
+
+
+
+SELECT 
+    p.name AS product_name,
+    p.price,
+    AVG(r.rating) AS average_rating,
+    COUNT(r.review_id) AS total_reviews
+FROM (
+    SELECT *
+    FROM products
+    ORDER BY price DESC
+    LIMIT 10
+) p
+JOIN reviews r 
+    ON p.product_id = r.product_id
+GROUP BY p.product_id, p.name, p.price
+ORDER BY average_rating DESC
+LIMIT 1;
