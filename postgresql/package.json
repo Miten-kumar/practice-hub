@@ -8,17 +8,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "node-pg-migrate",
     "start": "node index.ts",
-    "dev": "npx tsx --watch src/index.ts"
+    "dev": "npx tsx --watch src/index.ts",
+    "pgtyped":"npx pgtyped -w -c config.json "
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@pgtyped/cli": "^2.4.3",
     "@types/express": "^5.0.6",
     "@types/node": "^25.3.0",
     "@types/pg": "^8.16.0",
-    "node-pg-migrate": "^8.0.4"
+    "node-pg-migrate": "^8.0.4",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@pgtyped/runtime": "^2.4.2",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "pg": "^8.18.0"

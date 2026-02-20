@@ -98,6 +98,12 @@ https://www.geeksforgeeks.org/postgresql/postgresql-joins/
 https://www.w3schools.com/postgresql/postgresql_joins.php
 
 
+https://www.enterprisedb.com/postgres-tutorials/postgresql-query-introduction-explanation-and-50-examples
+
+https://medium.com/@jramcloud1/01-connection-pooling-postgresql-database-administration-connection-pooling-in-postgresql-17-1264aff21dae
+
+https://pgtyped.dev/docs/getting-started
+
 
 🔥 1️⃣ Top 10 Revenue Generating Products
 {Using the orders table:

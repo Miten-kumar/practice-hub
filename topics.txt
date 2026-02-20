@@ -1,0 +1,190 @@
+Day 1: TypeScript Fundamentals - Advanced Types
+ 
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• TypeScript configuration and tsconfig deep dive
+• Advanced types: Union, Intersection, Mapped types
+• Type guards and type narrowing
+• Generics and constraints
+• Utility types (Partial, Required, Pick, Omit, Record)
+
+Learning Objectives:
+✓ Master TypeScript type system for production code
+✓ Understand type inference and type safety
+✓ Write type-safe reusable code with generics
+
+■ Coding Challenge(s):
+Task 1: Type-Safe API Response Handler
+Time: 3 hours
+Create a generic API response handler with proper error types, discriminated unions for success/error states,
+and type guards for runtime validation
+
+■■ Common Gotchas & Advanced Concepts:
+■ Type assertions vs Type guards - when each is appropriate
+■ any vs unknown - security implications
+■ Structural typing pitfalls - excess property checking
+■ Readonly vs const - immutability at compile time only
+■ Type widening and narrowing edge cases
+
+
+
+day 2 
+■ Learning Time: 2.5 hours
+Topics to Cover:
+• Git branching strategies (Git Flow, GitHub Flow)
+• Interactive rebase and commit management
+• Cherry-picking and conflict resolution
+• Git hooks and automation
+• Managing .gitignore effectively
+
+Learning Objectives:
+✓ Master professional Git workflows
+✓ Handle complex merge conflicts
+✓ Write meaningful commit messages and PR descriptions
+
+We can move toward challange:
+ 
+■ Coding Challenge(s):
+
+Task 1: Git Workflow Simulation
+
+Time: 3.5 hours
+
+Simulate a real team workflow: create feature branch, make commits, create conflicts, resolve them, interactive
+
+rebase to clean history, and write a professional PR description
+ 
+■■ Common Gotchas & Advanced Concepts:
+
+■ Rebase vs Merge - when to use each in team settings
+
+■ Force push dangers and --force-with-lease
+
+■ Detached HEAD state and recovery
+
+■ Merge conflicts in package-lock.json/yarn.lock
+
+■ Accidentally committing secrets - proper removal from history
+ 
+
+day 3
+■ Learning Time: 3 hours
+Topics to Cover:
+• Functional components with TypeScript
+• Props typing and interface vs type
+• useState, useEffect with proper typing
+• Custom hooks with generics
+• Component composition patterns
+
+Learning Objectives:
+✓ Build type-safe React components
+✓ Understand React rendering behavior
+✓ Create reusable custom hooks
+
+■■ Common Gotchas & Advanced Concepts:
+■ React.FC vs function components - pros and cons
+■ useEffect dependency array - missing dependencies
+■ Stale closures in event handlers and callbacks
+■ Children prop typing - ReactNode vs ReactElement
+■ forwardRef typing complexity
+
+■ Coding Challenge(s):
+Task 1: Reusable Form Components Library
+Time: 3 hours
+Build type-safe form components (Input, Select, Checkbox) with validation, error handling, and generic value
+types. Include proper TypeScript interfaces for all props
+
+
+day 4
+■ Learning Time: 3 hours
+Topics to Cover:
+• useMemo and useCallback - when to use
+• useRef for DOM and mutable values
+• useReducer for complex state
+• useLayoutEffect vs useEffect
+• Custom hooks best practices
+
+Learning Objectives:
+✓ Optimize React performance
+✓ Understand hook execution order
+✓ Build production-ready custom hooks
+
+
+■■ Common Gotchas & Advanced Concepts:
+■ Premature optimization with useMemo/useCallback
+■ useRef for previous values - common pattern mistakes
+■ useEffect cleanup function timing
+■ Conditional hooks - rules of hooks violations
+■ useReducer vs useState - complexity threshold
+
+■ Coding Challenge(s):
+Task 1: Performance Monitoring Hook
+Time: 3 hours
+Create a usePerformanceMonitor custom hook that tracks component render times, re-render count, and logs
+performance bottlenecks. Implement useDebounce and useThrottle hooks
+
+
+day 5
+• Node.js with TypeScript configuration
+• Express with TypeScript - proper typing
+• Middleware typing and error handling
+• Request/Response typing
+• Environment variables with type safety
+
+Learning Objectives:
+✓ Set up production-grade Node.js backend
+✓ Implement type-safe Express applications
+✓ Structure Node.js projects professionally
+
+
+■■ Common Gotchas & Advanced Concepts:
+■ Express Request typing with custom properties
+■ Async error handling in Express middleware
+■ CORS configuration in production vs development
+■ Body parser middleware order matters
+■ Process.env typing - environment validation
+
+■ Coding Challenge(s):
+Task 1: Type-Safe REST API Boilerplate
+Time: 3.5 hours
+Build an Express API with TypeScript including: typed middleware chain, custom error handler, request
+validation with Zod/Joi, environment variable validation, and logger middleware
+
+
+day 6
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• PostgreSQL setup in pgAdmin
+• Database design principles and normalization
+• SQL fundamentals - complex queries
+• Indexes and query optimization
+• pg library with TypeScript
+
+Learning Objectives:
+✓ Design efficient database schemas
+✓ Write optimized SQL queries
+✓ Connect PostgreSQL with Node.js
+
+
+■ Coding Challenge(s):
+
+Task 1: E-commerce Database Schema
+Time: 3 hours
+Design and implement a normalized database schema for an e-commerce platform (users, products, orders,
+reviews). Include proper indexes, constraints, and write 5 complex queries (joins, aggregations, subqueries)
+
+day 7 
+■ Learning Time: 3 hours
+Topics to Cover:
+• Type-safe database queries with pg
+• Database migrations
+• Connection pooling best practices
+• Prepared statements and query builders
+• Database transactions
+
+Learning Objectives:
+✓ Implement type-safe database operations
+✓ Manage database schema changes
+✓ Handle concurrent database operations
