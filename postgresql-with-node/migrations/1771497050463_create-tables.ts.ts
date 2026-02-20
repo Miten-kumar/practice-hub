@@ -18,7 +18,7 @@ export async function up(pgm: MigrationBuilder): Promise<void> {
       notNull: true,
       unique: true,
     },
-    mobileNo: {
+    mobile_no: {
       type: "varchar(20)",
       notNull: true,
     },
