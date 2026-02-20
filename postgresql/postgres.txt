@@ -104,6 +104,8 @@ https://medium.com/@jramcloud1/01-connection-pooling-postgresql-database-adminis
 
 https://pgtyped.dev/docs/getting-started
 
+https://oneuptime.com/blog/post/2026-02-02-postgresql-database-migrations/view
+
 
 🔥 1️⃣ Top 10 Revenue Generating Products
 {Using the orders table:
