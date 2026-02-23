@@ -10,7 +10,7 @@ export const shorthands = undefined;
  */
 export const up = (pgm) => {
   pgm.createTable("users", {
-    id: { type: "id", primaryKey: true },
+    user_id: { type: "id", primaryKey: true },
     name: { type: "varchar(100)", notNull: true },
     email: { type: "varchar(100)", notNull: true, unique: true },
     contact_no: { type: "varchar(20)", notNull: true, unique: true },
@@ -21,13 +21,26 @@ export const up = (pgm) => {
     },
   });
 
-  pgm.createTable("products", {
-    product_id: { type: "id", primaryKey: true },
-    name: { type: "varchar(100)", notNull: true },
-    description: { type: "varchar(255)", notNull: true },
-    price: { type: "numeric(10,2)", notNull: true },
-  });
-
+  pgm.createTable(
+    "products",
+    {
+      product_id: { type: "id", primaryKey: true },
+      name: { type: "varchar(100)", notNull: true },
+      description: { type: "varchar(255)", notNull: true },
+      price: { type: "numeric(10,2)", notNull: true },
+      stock: { type: "integer", notNull: true },
+      created_at: {
+        type: "timestamp",
+        notNull: true,
+        default: pgm.func("current_timestamp"),
+      },
+    },
+    {
+      constraints: {
+        check: ["price >= 0", "stock >= 0"],
+      },
+    },
+  );
 
   pgm.createTable(
     "orders",
@@ -45,10 +58,11 @@ export const up = (pgm) => {
     },
     {
       constraints: {
+        check: "quantity > 0",
         foreignKeys: [
           {
             columns: "user_id",
-            references: "users(id)",
+            references: "users(user_id)",
             onDelete: "CASCADE",
           },
           {
@@ -77,10 +91,11 @@ export const up = (pgm) => {
     },
     {
       constraints: {
+        check: "rating >= 1 AND rating <= 5",
         foreignKeys: [
           {
             columns: "user_id",
-            references: "users(id)",
+            references: "users(user_id)",
             onDelete: "CASCADE",
           },
           {
@@ -89,9 +104,16 @@ export const up = (pgm) => {
             onDelete: "CASCADE",
           },
         ],
+        unique: ["user_id", "product_id"],
       },
     },
   );
+
+  pgm.addIndex("orders", "user_id");
+  pgm.addIndex("orders", "product_id");
+  pgm.addIndex("orders", ["user_id", "product_id"]);
+  pgm.addIndex("reviews", "user_id");
+  pgm.addIndex("reviews", "product_id");
 };
 /**
  * @param pgm {import('node-pg-migrate').MigrationBuilder}

@@ -3,31 +3,39 @@ import express from "express";
 import { client, query } from "./db/db.js";
 import { Client } from "pg";
 import { findAllUsers, findUserById } from "./books/queries.queries.js";
+import knex from "knex";
+import dotenv from "dotenv";
+
 const app = express();
 
-
 export const client2 = new Client({
-  host: 'localhost',
-  user: 'postgres',
-  password: '2110',
-  database: 'ecommerce',
+  host: "localhost",
+  user: "postgres",
+  password: "2110",
+  database: "ecommerce",
+});
+
+const pg = knex({
+  client: "pg",
+  connection: process.env.DATABASE_URL,
+  searchPath:['knex','public']
 });
 
 async function main() {
   await client.connect();
   const user = await findUserById.run(
     {
-      userId: 11
+      userId: 11,
     },
     client,
   );
-  const userlist = await findAllUsers.run(undefined,client)
+  const userlist = await findAllUsers.run(undefined, client);
   console.log("Book name:", user);
   console.log("Book name:", userlist);
   await client.end();
 }
 
-main();
+// main();
 
 const Task = async () => {
   await client.connect();
@@ -132,6 +140,18 @@ JOIN reviews r
     res5.rows,
   );
 };
+
+const PgBuilder = async()=>{
+  try {
+    const userlist = await pg.select('name','email','id').table('users').first();
+    console.log(userlist,'resss')
+  } catch (error) {
+    console.log('error',error)
+  }
+
+}
+
+PgBuilder()
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

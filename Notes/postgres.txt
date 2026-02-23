@@ -41,7 +41,7 @@ FROM tweets;
 
 
 https://medium.com/yavar/install-and-configure-postgresql-and-pgadmin-on-ubuntu-20-04-22-04-52c52c249b9e
-
+https://oneuptime.com/blog/post/2026-01-25-manage-connection-limits-postgresql/view
 
 https://www.w3schools.com/postgresql/postgresql_create_table.php
 

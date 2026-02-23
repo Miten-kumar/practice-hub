@@ -9,7 +9,7 @@
     "migrate": "node-pg-migrate",
     "start": "node index.ts",
     "dev": "npx tsx --watch src/index.ts",
-    "pgtyped":"npx pgtyped -w -c config.json "
+    "pgtyped": "npx pgtyped -w -c config.json "
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "@pgtyped/runtime": "^2.4.2",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "knex": "^3.1.0",
     "pg": "^8.18.0"
   }
 }
