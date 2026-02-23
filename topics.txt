@@ -50,21 +50,14 @@ We can move toward challange:
 Task 1: Git Workflow Simulation
 
 Time: 3.5 hours
-
 Simulate a real team workflow: create feature branch, make commits, create conflicts, resolve them, interactive
-
 rebase to clean history, and write a professional PR description
- 
+
 ■■ Common Gotchas & Advanced Concepts:
-
 ■ Rebase vs Merge - when to use each in team settings
-
 ■ Force push dangers and --force-with-lease
-
 ■ Detached HEAD state and recovery
-
 ■ Merge conflicts in package-lock.json/yarn.lock
-
 ■ Accidentally committing secrets - proper removal from history
  
 

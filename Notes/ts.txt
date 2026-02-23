@@ -1,0 +1,39 @@
+tsconfig used for 
+	automated compiling
+	same ts setting in the team 
+	catch error in compile time and not runtime
+	better proj structure
+	better performance
+	watch mode
+	module type and js version control 
+	
+	
+tsconfig file has 
+		compileroption ;- how and what to compile 
+		files ;- define which file to compile using "tsc" command 
+		extends ;- inherit setting from other config files,,first it will load the base file and then whatever is inherited will override the specific setting,, files,inclue,exclude will replace the files from the base file 
+		include,exclude ;- pattern of files to either include or exclude in compiling
+		refrences ;- helps to organize large projects , split large codebase into smaller , composite should be true
+		target ;- for js version
+		removecomments ;- as name say
+		nounusedparamaters ;- error for unused or extra params
+		nounusedlocals ;- error for unused local var
+		outdir ;- placed where the compiled js will be saved
+		rootdir ;- only files in rootdir will be compiled
+		
+		
+		
+Union types ;-  merging 2 more types for one var is union only defined types will not throw error 
+		cannot use method or either types on that var directly first check and then use method of that type
+		if both or all types have one common things like array and str has common fun slice then it wont show error if we use it without checking 
+		and when we check for specific types in union and that block of code after checking work for that one type only then it is called narrowing 
+		
+intersection types ;-   TypeScript provides another construct called intersection types that is mainly used to combine existing object types.
+			if both have same name but different types then error  
+		
+		
+/** Narrowing occurs when TypeScript can deduce a more specific type for a value based on the structure of the code. **/
+
+
+
+type guards ;- 

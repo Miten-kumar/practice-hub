@@ -1,0 +1,74 @@
+https://medium.com/@gabrieldrouin/node-js-2025-guide-how-to-setup-express-js-with-typescript-eslint-and-prettier-b342cd21c30d
+
+
+
+https://nodejs.org/en/learn/typescript/publishing-a-ts-package
+
+
+
+https://www.digitalocean.com/community/tutorials/setting-up-a-node-project-with-typescript
+
+
+https://dev.to/macmacky/get-better-with-typescript-using-express-3ik6
+
+
+https://www.digitalocean.com/community/tutorials/typescript-generics-in-typescript
+
+
+https://markmaksi.hashnode.dev/how-to-handle-errors-in-nodejs-typescript-like-a-senior-developer
+
+
+https://javascript.plainenglish.io/typed-express-request-and-response-with-typescript-7277aea028c
+
+
+https://www.creatures.sh/blog/env-type-safety-and-validation/
+
+
+https://www.linkedin.com/pulse/type-safe-environment-variables-node-gerard-siles-gsbef
+
+
+https://expressjs.com/en/resources/middleware/morgan.html
+
+
+''''''''''''''''''''
+
+2. Creating Custom Logger Middleware
+You can also write a simple, custom logger function to understand how middleware works. 
+Usage:
+javascript
+const express = require('express');
+const app = express();
+
+// Custom logger middleware function
+const myLogger = function (req, res, next) {
+  console.log(`LOGGED: ${req.method} request to ${req.url}`);
+  next(); // Pass control to the next middleware or route handler
+};
+
+// Load the custom middleware
+app.use(myLogger);
+
+app.get('/', (req, res) => {
+  res.send('Hello from custom logger!');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+
+''''''''''''''''''''''''
+
+
+
+https://blog.logrocket.com/extend-express-request-object-typescript/
+
+
+https://medium.com/@mubashir_ejaz/param-middleware-and-chaining-multiple-middleware-functions-7fef831c86f3
+
+
+https://medium.com/@xiaominghu19922/proper-error-handling-in-express-server-with-typescript-8cd4ffb67188
+
+
+
+

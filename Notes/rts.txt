@@ -1,0 +1,122 @@
+Functional components with TypeScript
+		https://dev.to/wpreble1/typescript-with-react-functional-components-4c69
+		
+		
+Props typing 
+		https://www.totaltypescript.com/react-props-typescript
+
+
+interface vs type
+		https://blog.logrocket.com/types-vs-interfaces-typescript/
+		
+
+useState, useEffect with proper typing
+		
+		https://www.freecodecamp.org/news/react-typescript-how-to-set-up-types-on-hooks/#:~:text=To%20set%20types%20on%20the,t%20have%20an%20initial%20state.
+		https://dev.to/busypeoples/notes-on-typescript-react-hooks-28j2#:~:text=when%20initially%20rendering.-,useEffect,when%20the%20effects%20are%20run.
+		
+		
+Custom hooks with generics
+		https://jesse-94998.medium.com/building-reusable-react-hooks-with-generics-a73ebedd40de
+		
+		
+Component composition patterns
+		https://medium.com/@ibrahimsengun/typescript-composite-design-pattern-fde91641f311
+		https://dev.to/ricardolmsilva/composition-pattern-in-react-28mj
+		
+		
+		
+rerender 
+		https://medium.com/@sparshmalhotraaa/a-guide-to-react-rendering-behaviour-part-1-32374f0caa0d
+		https://medium.com/@sparshmalhotraaa/a-guide-to-react-rendering-behaviour-part-2-28c3dc93ca3a
+		
+		
+		
+		https://flaming.codes/posts/react-fc-vs-function-components-typescript
+		https://www.totaltypescript.com/jsx-element-vs-react-reactnode
+		https://gist.github.com/IrvingArmenta/a6d7fc76ed538697ad18b7f074accdde
+		https://medium.com/zestgeek/how-to-use-forwardref-api-in-react-a-comprehensive-guide-with-real-life-examples-6a3f33fe7ebd
+		
+		
+		
+		
+		
+usememo usecallback
+		https://www.joshwcomeau.com/react/usememo-and-usecallback/
+		https://dev.to/kirubelkinfe/mastering-usememo-in-react-with-typescript-4-different-use-cases-for-usememo-5gal
+		https://dev.to/kirubelkinfe/mastering-usecallback-in-react-with-typescript-4-different-use-cases-for-usecallback-3lga
+		
+		
+		
+useref 
+		https://mominjahid.medium.com/understanding-useref-and-mutable-refs-in-react-with-typescript-43acbe89f035
+		
+		
+usereducer 	
+		https://www.aleksandrhovhannisyan.com/blog/managing-complex-state-react-usereducer/
+		https://medium.com/@ignatovich.dm/state-management-with-usereducer-advanced-examples-and-explanation-9bfd130705fa
+		
+		
+		
+useeffect vs uselayouteffect 
+		https://joodi.medium.com/understanding-useeffect-vs-uselayouteffect-in-react-64179313fc9e
+		
+		
+		
+		
+Premature optimization with useMemo/useCallback
+		Code Complexity & Readability: Wrapping every value or function in useMemo or useCallback adds boilerplate code and an extra 							 layer of complexity, making the code harder to read, write, refactor, and maintain.
+		Performance Overhead: Memoization is not free; the hooks themselves have a small execution and memory overhead for caching and comparing dependency arrays. For simple calculations or small applications, this overhead can sometimes outweigh the benefits of avoiding a re-computation or re-render.
+		Potential for Bugs: Incorrectly managing the dependency arrays can lead to "stale" values or functions, introducing subtle and hard-to-debug bugs into the application.
+		Misguided Effort: React is optimized by default for performance in most scenarios. Developers should focus on clean, functional code first. Optimizing parts of the code that aren't performance bottlenecks is a waste of effort. 
+		
+		
+		
+useRef for previous values - common pattern mistakes
+		Mutating the ref during the render phase
+		Expecting ref updates to trigger re-renders
+		Forgetting to use .current
+		Stale closures in asynchronous code
+		Using refs for derived state
+		https://medium.com/@rishavjaiss14/common-mistakes-react-developers-make-usestate-or-useref-76bca3903a80
+		
+		
+useEffect cleanup function timing
+		Before the next effect runs
+		When the component unmounts
+		
+		
+		
+Conditional hooks - rules of hooks violations
+		Inside Conditions: Never use if or && statements around hooks.
+		Inside Loops: Do not call hooks within for or while loops.
+		After Conditional Returns: Never place hooks after an if (...) return ... statement.
+		In Event Handlers/Callbacks: Hooks cannot be called inside nested functions or event handlers.
+		Inside try/catch/finally: Hooks cannot be inside exception handling blocks. 
+		
+		
+		order of hooks best practice 
+			usestate>userducer>context>ref>callback>memo>effect>jsx >return jsx
+		
+		
+useReducer vs useState - complexity threshold
+		usestate ;- less or simple state management
+		usereducer ;- more and complex state management 
+		
+		
+		Feature 	useState							useReducer
+		Complexity	Simple and straightforward					More complex, suitable for intricate state transitions
+		Use Case	Ideal for independent state updates (boolean, string, number)	Suitable for managing complex state objects, arrays, and transitions based on previous state
+		Logic Location	Logic is within the component or event handlers			Logic is centralized in a pure reducer function (often outside the component)
+		Boilerplate	Minimal								More verbose (requires actions and a reducer function)
+		Performance	Good for simple scenarios					Can optimize performance for complex state by preventing unnecessary re-renders
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
