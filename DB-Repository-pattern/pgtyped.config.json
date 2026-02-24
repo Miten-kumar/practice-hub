@@ -1,0 +1,20 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "user": "postgres",
+    "dbName": "ecommerce",
+    "password": "Feb@2026"
+  },
+
+  "transforms": [
+    {
+      "mode": "sql",
+      "include": "**/*.sql",
+      "emitTemplate": "{{dir}}/queries/{{name}}.queries.ts"
+    }
+  ],
+  "srcDir": "./db/",
+  "failOnError": false,
+  "camelCaseColumnNames": false
+}
