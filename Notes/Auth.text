@@ -18,6 +18,7 @@ https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 • Role-based access control (RBAC)
 https://www.geeksforgeeks.org/ethical-hacking/role-based-access-control-1/
+https://medium.com/@jayantchoudhary271/building-role-based-access-control-rbac-in-node-js-and-express-js-bc870ec32bdb
 
 • Secure cookie handling
 https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies
