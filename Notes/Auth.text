@@ -1,0 +1,23 @@
+• JWT token structure and security
+    A JSON Web Token (JWT) is a compact, URL-safe token used for securely transmitting information between parties. It is commonly used for:
+        Authentication (login sessions)
+        Authorization (access control)
+        Information exchange between services (APIs, microservices)
+https://www.jwt.io/introduction#when-to-use-json-web-tokens
+https://curity.io/resources/learn/jwt-best-practices/
+
+The rule of thumb is — the service that receives a JWT should always validate it.
+Always Check the JWT Issuer
+
+• Password hashing with bcrypt
+https://www.freecodecamp.org/news/how-to-hash-passwords-with-bcrypt-in-nodejs/
+
+
+• Refresh token rotation
+https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+
+• Role-based access control (RBAC)
+https://www.geeksforgeeks.org/ethical-hacking/role-based-access-control-1/
+
+• Secure cookie handling
+https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies

@@ -1,0 +1,16 @@
+• Database design principles and normalization
+• SQL fundamentals - complex queries
+• Indexes and query optimization
+✓ Design efficient database schemas
+✓ Write optimized SQL queries
+• Type-safe database queries with pg
+• Database migrations
+• Connection pooling best practices
+• Prepared statements and query builders
+• Database transactions
+■ Prepared statement memory leaks
+■ Time zone handling in PostgreSQL
+■ Cascade delete implications
+■ Deadlocks in transactions - detection and prevention
+■ Connection pool configuration - min/max/idle settings
+ Database optimisation techniques
