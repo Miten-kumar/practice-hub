@@ -1,30 +1,28 @@
 {
-  "name": "task-jwt",
+  "name": "task-authsystem",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec tsx src/server.ts",
-    "migrate:up": "node-pg-migrate -j ts up",
-    "migrate:down": "node-pg-migrate -j ts down",
-    "migrate:redo": "node-pg-migrate -j ts redo",
-    "migrate:create": "node-pg-migrate -j ts create",
-    "pgtyped":"npx pgtyped -w -c config.json"
+    "dev": "nodemon --exec tsx src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "class-validator": "^0.14.3",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "nodemon": "^3.1.14",
     "pg": "^8.18.0",
-    "tsx": "^4.21.0"
+    "reflect-metadata": "^0.2.2",
+    "tsx": "^4.21.0",
+    "typeorm": "^0.3.28"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

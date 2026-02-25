@@ -1,23 +1,29 @@
-import express from 'express';
-import {pool} from './Db/db';
+import  express  from "express"
+import dotenv from "dotenv"
+import { AppDataSource } from "./data-source"
+import "reflect-metadata";
+import userRoutes from "./routes/user.routes"
 
-const app = express();
+const app = express()
 app.use(express.json());
+dotenv.config()
 
-async function verifyConnection(): Promise<void> {
-  try {
-    const client = await pool.connect();
-    console.log('Connected to PostgreSQL database');
-    client.release();
-  } catch (error) {
-    console.error('Error connecting to the database:', error);
-  }
+app.use("/users",userRoutes)
+
+const checkConnection = async () => {
+    try{
+        await AppDataSource.initialize()
+        console.log("connection sucessfull")
+    }
+    catch(error){
+        console.log(error)
+    }
 }
- 
-verifyConnection();
- 
-const PORT = process.env.PORT || 5000
 
-app.listen(PORT,() => {
-    console.log(`server is running on ${PORT}`)
+await checkConnection();
+
+const PORT = process.env.port || 3000;
+
+app.listen(PORT,() =>{
+    console.log("server is running on",PORT)
 })
