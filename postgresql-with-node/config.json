@@ -1,0 +1,5 @@
+{
+  "db": {
+    "url": "postgres://postgres:Feb%402026@localhost:5432/ecommerce"
+  }
+}
