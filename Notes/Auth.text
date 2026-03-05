@@ -22,3 +22,46 @@ https://medium.com/@jayantchoudhary271/building-role-based-access-control-rbac-i
 
 • Secure cookie handling
 https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies
+
+typeORM
+https://dev.to/ayka_code/using-typeorm-with-postgresql-in-a-nodejs-and-express-application-4gma
+https://typeorm.io/docs/getting-started#using-repositories
+
+• Request validation with Zod
+https://dev.to/osalumense/validating-request-data-in-expressjs-using-zod-a-comprehensive-guide-3a0j
+
+• Custom error classes
+https://itztalhaa.medium.com/custom-error-class-and-centralized-error-handling-in-nodejs-03887eb65793
+
+• Global error handling middleware
+https://medium.com/@mohsinansari.dev/simplified-guide-to-setting-up-a-global-error-handler-in-express-js-daf8dd640b69
+
+• API response standardization
+https://medium.com/@tusharupadhyay691/standardizing-api-responses-in-typescript-enhancing-clarity-and-flexibility-3c1294f0ff05
+
+• Logging best practices
+https://blog.appsignal.com/2021/09/01/best-practices-for-logging-in-nodejs.html
+
+Validation error messages - security vs UX
+https://www.nngroup.com/articles/error-message-guidelines/
+
+• Redux fundamentals and state management
+https://redux.js.org/tutorials/fundamentals/part-1-overview
+
+• Redux Toolkit - modern Redux
+https://redux.js.org/tutorials/fundamentals/part-8-modern-redux
+
+• createSlice and createAsyncThunk
+https://redux-toolkit.js.org/api/createAsyncThunk
+https://redux-toolkit.js.org/api/createSlice
+
+• TypeScript with Redux Toolkit
+https://redux-toolkit.js.org/tutorials/typescript
+
+• Optimistic updates
+https://medium.com/@sunilnepali844/optimistic-updates-with-rtk-query-a-simple-guide-10fea1fc0ce8
+
+https://redux-toolkit.js.org/rtk-query/usage/cache-behavior
+
+
+https://redux-toolkit.js.org/api/createListenerMiddleware
