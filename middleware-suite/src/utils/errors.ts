@@ -1,0 +1,35 @@
+export class AppError extends Error {
+  statusCode: number;
+  isOperational: boolean;
+  constructor(message: string, statusCode: number) {
+    super(message);
+    this.statusCode = statusCode;
+    this.isOperational = true;
+
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+
+export class BadRequestError extends AppError {
+  constructor(message = "Bad Request") {
+    super(message, 400);
+  }
+}
+
+export class UnauthorizedError extends AppError {
+  constructor(message = "Unauthorized") {
+    super(message, 401);
+  }
+}
+
+export class NotFoundError extends AppError {
+  constructor(message = "Resource Not Found") {
+    super(message, 404);
+  }
+}
+
+export class InternalServerError extends AppError {
+  constructor(message = "internal server error") {
+    super(message, 500);
+  }
+}
