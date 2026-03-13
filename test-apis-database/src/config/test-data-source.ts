@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { DataSource } from "typeorm";
-import { User } from "../entities/User";
-import { Post } from "../entities/Post";
+import { Users } from "../entities/User";
+import { Posts } from "../entities/Post";
 
 export const TestDataSource = new DataSource({
   type: "postgres",
@@ -12,5 +12,5 @@ export const TestDataSource = new DataSource({
   database: process.env.TEST_DB_NAME ?? "integration_test_db",
   synchronize: true,
   dropSchema: true,
-  entities: [User, Post],
+  entities: [Users, Posts],
 });

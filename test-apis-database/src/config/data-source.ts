@@ -1,8 +1,8 @@
 import "dotenv/config";
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "../entities/User";
-import { Post } from "../entities/Post";
+import { Users } from "../entities/User";
+import { Posts } from "../entities/Post";
 
 const databaseUrl = process.env.DATABASE_URL;
 
@@ -19,6 +19,6 @@ export const AppDataSource = new DataSource({
       }),
   synchronize: false,
   logging: false,
-  entities: [User, Post],
+  entities: [Users, Posts],
   migrations: ["src/migrations/*.ts"],
 });

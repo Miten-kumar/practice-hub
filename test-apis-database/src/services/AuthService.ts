@@ -1,21 +1,21 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { UserRepository } from "../repositories/UserRepository";
+import { getUserRepository } from "../repositories/UserRepository";
 
 export class AuthService {
   async register(email: string, password: string) {
     const hashed = await bcrypt.hash(password, 10);
 
-    const user = UserRepository.create({
+    const user = getUserRepository().create({
       email,
       password: hashed,
     });
 
-    return UserRepository.save(user);
+    return getUserRepository().save(user);
   }
 
   async login(email: string, password: string) {
-    const user = await UserRepository.findOne({
+    const user = await getUserRepository().findOne({
       where: { email },
     });
 

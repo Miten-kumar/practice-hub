@@ -5,10 +5,10 @@ import {
   ManyToOne,
   JoinColumn,
 } from "typeorm";
-import { User } from "./User";
+import { Users } from "./User";
 
 @Entity({ name: "posts" })
-export class Post {
+export class Posts {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -18,7 +18,7 @@ export class Post {
   @Column({ type: "text" })
   content!: string;
 
-  @ManyToOne(() => User, (user) => user.posts)
+  @ManyToOne(() => Users, (user) => user.posts)
   @JoinColumn({ name: "user_id" })
-  user!: User;
+  user!: Users;
 }

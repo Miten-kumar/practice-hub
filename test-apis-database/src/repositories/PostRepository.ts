@@ -1,4 +1,6 @@
-import { AppDataSource } from "../config/data-source";
-import { Post } from "../entities/Post";
+import { Posts } from "../entities/Post";
+import { getActiveDataSource } from "./activeDataSource";
 
-export const PostRepository = AppDataSource.getRepository(Post);
+export function getPostRepository() {
+  return getActiveDataSource().getRepository(Posts);
+}

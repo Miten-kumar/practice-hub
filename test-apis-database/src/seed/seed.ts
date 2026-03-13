@@ -1,11 +1,11 @@
 import { AppDataSource } from "../config/data-source";
-import { User } from "../entities/User";
+import { Users } from "../entities/User";
 import bcrypt from "bcrypt";
 
 async function seed() {
   await AppDataSource.initialize();
 
-  const repo = AppDataSource.getRepository(User);
+  const repo = AppDataSource.getRepository(Users);
 
   const password = await bcrypt.hash("123456", 10);
 
