@@ -7,7 +7,6 @@ export class Tasks {
 
     @Column({
         type:"varchar",
-        unique:true,
         length: 255,
         nullable:false
     })

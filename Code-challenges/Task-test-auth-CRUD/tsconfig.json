@@ -7,11 +7,13 @@
     "declaration": true,
     "sourceMap": true,
     "declarationMap": true,
-    "rootDir": "src",
+    // "rootDir": "src",
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports":true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true
+
   }
 }
