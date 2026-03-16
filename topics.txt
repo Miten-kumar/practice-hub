@@ -181,3 +181,428 @@ Learning Objectives:
 ✓ Implement type-safe database operations
 ✓ Manage database schema changes
 ✓ Handle concurrent database operations
+
+■■ Common Gotchas & Advanced Concepts:
+■ Connection pool configuration - min/max/idle settings
+■ Deadlocks in transactions - detection and prevention
+■ Prepared statement memory leaks
+■ Time zone handling in PostgreSQL
+■ Cascade delete implications
+
+■ Coding Challenge(s):
+Task 1: Database Repository Pattern
+Time: 3 hours
+Implement a type-safe repository pattern for the e-commerce schema. Include: transaction support, connection
+pooling, migration scripts, and error handling for constraint violations
+
+
+
+■ Learning Time: 3 hours
+Topics to Cover:
+• JWT token structure and security
+• Password hashing with bcrypt
+• Refresh token rotation
+• Role-based access control (RBAC)
+• Secure cookie handling
+
+Learning Objectives:
+✓ Implement secure authentication
+✓ Understand JWT security implications
+✓ Build authorization middleware
+
+
+Task 1: Complete Auth System
+Time: 3 hours
+Build a production-ready auth system: register, login, refresh tokens, password reset, email verification,
+role-based middleware. Include rate limiting on auth endpoints
+
+
+■ Learning Time: 2.5 hours
+Topics to Cover:
+• Request validation with Zod
+• Custom error classes
+• Global error handling middleware
+• API response standardization
+• Logging best practices
+
+Learning Objectives:
+✓ Validate all API inputs
+✓ Implement consistent error responses
+✓ Create production-grade error handling
+
+
+■■ Common Gotchas & Advanced Concepts:
+■ Validation error messages - security vs UX
+■ Async error propagation in Express
+■ Error stack traces in production
+■ Logging sensitive data - PII concerns
+■ HTTP status codes - proper usage
+
+
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• Redux fundamentals and state management
+• Redux Toolkit - modern Redux
+• createSlice and createAsyncThunk
+• TypeScript with Redux Toolkit
+• Redux DevTools integration
+
+Learning Objectives:
+✓ Implement Redux for complex state
+✓ Use Redux Toolkit best practices
+✓ Type Redux store properly
+
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• Redux middleware concepts
+• RTK Query for data fetching
+• Optimistic updates
+• Cache invalidation strategies
+• Redux Toolkit listeners
+
+Learning Objectives:
+✓ Handle async operations efficiently
+✓ Implement caching strategies
+✓ Manage complex side effects
+
+
+■ Learning Time: 3 hours
+Topics to Cover:
+• React.memo and memoization strategies
+• Virtual list and windowing (react-window)
+• Code splitting with React.lazy
+• Bundle optimization
+• React DevTools Profiler
+
+Learning Objectives:
+✓ Identify performance bottlenecks
+✓ Optimize large lists and renders
+✓ Reduce bundle size effectively
+
+■ Learning Time: 3 hours
+Topics to Cover:
+• Compound components pattern
+• Render props vs custom hooks
+• Higher-Order Components (HOCs)
+• Context API optimization
+• Controlled vs Uncontrolled components
+
+Learning Objectives:
+✓ Implement advanced component patterns
+✓ Build flexible component APIs
+✓ Optimize Context usage
+
+■■ Common Gotchas & Advanced Concepts:
+
+■ React.memo with object props - reference equality
+■ useCallback/useMemo dependency arrays
+■ Lazy loading timing - Suspense boundaries
+■ Bundle splitting strategy - over-splitting
+■ Virtual scrolling accessibility issues
+■ Context value reference - causing re-renders
+■ HOC type safety in TypeScript
+■ Compound components - cloneElement pitfalls
+■ Controlled component performance
+■ Context provider splitting strategy
+ 
+
+■■ Common Gotchas & Advanced Concepts:
+
+■ Over-using Redux - local state vs global state
+■ Immer and mutation - how RTK handles it
+■ Action creator naming conflicts
+■ Redux state normalization - entities pattern
+■ useSelector performance - reselect library
+■ RTK Query cache key collisions
+■ Optimistic update rollback complexity
+■ Polling and real-time data with RTK Query
+■ Infinite scroll with RTK Query pagination
+■ Manual cache manipulation pitfalls
+
+
+■ Learning Time: 3 hours
+Topics to Cover:
+• Multipart form data handling
+• Multer middleware configuration
+• File validation and security
+• Cloud storage integration (AWS S3 pattern)
+• Image optimization and compression
+
+Learning Objectives:
+✓ Implement secure file uploads
+✓ Handle large file uploads
+✓ Optimize file storage and delivery
+
+
+■■ Common Gotchas & Advanced Concepts:
+■ File upload size limits - nginx/node configuration
+■ MIME type validation - client vs server
+■ File name sanitization - path traversal attacks
+■ Disk space management - cleanup strategies
+■ Concurrent upload handling - stream management
+
+
+■ Learning Time: 3 hours
+Topics to Cover:
+• Docker concepts and architecture
+• Docker file best practices
+• Multi-stage builds
+• Docker Compose for local development
+• Container networking and volumes
+
+Learning Objectives:
+✓ Containerize Node.js applications
+✓ Optimize Docker images
+✓ Set up development environment with Docker
+
+■ Common Gotchas & Advanced Concepts:
+■ Layer caching - COPY package.json before code
+■ node_modules in volumes - conflicts
+■ Docker .dockerignore importance
+■ Environment variables in containers
+■ Development vs production Dockerfile differences
+ 
+ 
+ 
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• Redis data structures and commands
+• Caching strategies (cache-aside, write-through)
+• Redis with Node.js and TypeScript
+• TTL and expiration policies
+• Session storage in Redis
+
+Learning Objectives:
+✓ Implement effective caching strategies
+✓ Reduce database load
+✓ Handle session management with Redis
+
+■■ Common Gotchas & Advanced Concepts:
+■ Cache invalidation - hardest problem in CS
+■ Redis memory limits - eviction policies
+■ Serialization issues - JSON.stringify limitations
+■ Redis connection pool management
+■ Cache stampede problem - preventing it
+
+
+■ Learning Time: 2.5 hours
+
+Topics to Cover:
+• Rate limiting strategies
+• Token bucket algorithm
+• Redis-based rate limiter
+• Security headers (helmet)
+• Input sanitization and SQL injection prevention
+
+Learning Objectives:
+✓ Protect APIs from abuse
+✓ Implement security best practices
+✓ Handle DDoS mitigation
+
+■■ Common Gotchas & Advanced Concepts:
+■ Rate limit key selection - IP vs user vs API key
+■ Distributed rate limiting - Redis race conditions
+■ Rate limit headers - informing clients
+■ Bypass attempts - X-Forwarded-For spoofing
+■ Rate limit per endpoint vs global
+
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• WebSocket protocol fundamentals
+• Socket.io with TypeScript
+• Room and namespace management
+• Real-time event handling
+• WebSocket authentication
+
+Learning Objectives:
+✓ Implement real-time features
+✓ Manage WebSocket connections
+✓ Handle connection failures and reconnection
+
+■■ Common Gotchas & Advanced Concepts:
+■ WebSocket vs HTTP - when to use each
+■ Socket.io handshake authentication
+■ Memory leaks from event listeners
+■ Scaling WebSockets - sticky sessions
+■ Handling disconnections and reconnection logic
+
+1) Create a complete middleware suite: request validation, error handler with custom error classes, request
+logger, response formatter, and API rate limiter with Redis
+ 
+2) Set up Redux Toolkit store with multiple slices (auth, products, cart). Implement createAsyncThunk for API
+calls, proper error handling, loading states, and selectors with reselect
+ 
+3) Implement RTK Query for the e-commerce API: define endpoints, implement optimistic updates for cart, cache
+invalidation, infinite scroll pagination, and prefetching
+ 
+4) Optimize a provided slow React app: implement virtual scrolling for 10k+ items, code splitting for routes,
+memoization where needed, and reduce bundle size by 50%. Document performance gains
+ 
+5) Build a compound component Tab system (Tabs, TabList, Tab, TabPanels, TabPanel) using Context API,
+supporting keyboard navigation, lazy loading, and TypeScript. Include controlled and uncontrolled modes
+
+6) Build a file upload API with: multiple file support, file type validation, size limits, image compression, progress
+tracking, chunked uploads for large files, and error recovery
+ 
+7) Create Dockerfiles for React and Node.js apps. Write docker-compose.yml with PostgreSQL, Redis, frontend,
+and backend services. Include hot reload for development and optimized production builds
+ 
+8) Implement Redis caching for the e-commerce API: cache product lists, implement cache invalidation on
+updates, handle cache stampede with locks, session management, and rate limiting with Redis
+ 
+9) Implement comprehensive API security: flexible rate limiter with Redis, helmet configuration, CSRF protection,
+input sanitization, SQL injection tests, and security headers validation
+ 
+10) Build a type-safe real-time chat with Socket.io: user authentication, rooms, typing indicators, read receipts,
+message persistence, and graceful error handling. Include presence system
+
+
+Topics to Cover:
+• Node.js cluster module
+• PM2 for process management
+• Load balancing strategies
+• Nginx as reverse proxy
+• Health checks and monitoring
+
+Learning Objectives:
+✓ Scale Node.js applications
+✓ Implement load balancing
+✓ Monitor application health
+
+■■ Common Gotchas & Advanced Concepts:
+■ Cluster module shared state - no memory sharing
+■ Socket.io with cluster - Redis adapter required
+■ PM2 ecosystem file configuration
+■ Graceful shutdown - handling in-flight requests
+■ Load balancing algorithms - round-robin vs least-connections
+
+Task 1: Scalable Node.js Architecture
+
+Time: 3 hours
+Configure Node.js clustering with PM2, set up Nginx load balancer with multiple backend instances, implement
+health checks, graceful shutdown, and stress test with 1000+ concurrent requests
+
+
+Topics to Cover:
+• Chrome DevTools advanced features
+• Node.js debugging with inspector
+• Source maps in production
+• Performance profiling
+• Memory leak detection
+
+Learning Objectives:
+✓ Master debugging techniques
+✓ Identify and fix memory leaks
+✓ Profile application performance
+ 
+■■ Common Gotchas & Advanced Concepts:
+■ Production debugging - source maps security
+■ Memory leaks - common patterns in Node.js
+■ Event loop blocking - identifying CPU-bound code
+■ Debugger statement vs breakpoints
+■ Async stack traces - missing context
+
+Time: 3 hours
+
+Given a buggy application with memory leaks, event loop blocking, and race conditions: identify issues using
+
+profiling tools, fix all bugs, optimize performance, and document debugging process
+ 
+
+Topics to Cover:
+• Jest configuration and setup
+• Unit testing React components
+• React Testing Library best practices
+• Mocking modules and APIs
+• Test coverage analysis
+
+Learning Objectives:
+✓ Write effective unit tests
+✓ Test React components properly
+✓ Achieve meaningful code coverage
+
+■■ Common Gotchas & Advanced Concepts:
+■ Testing implementation vs behavior
+■ Async testing - waitFor vs findBy
+■ Mock function assertions - toHaveBeenCalledWith
+■ Testing Context and Redux - provider setup
+■ Snapshot tests - when they are useful
+
+Task 1: Component Test Suite
+Time: 3 hours
+Write comprehensive tests for 5 complex components: form validation, async data fetching, user interactions,
+error states, edge cases. Achieve 90%+ coverage with meaningful tests
+
+Topics to Cover:
+• Integration testing strategies
+• API testing with supertest
+• Database testing patterns
+• Test fixtures and factories
+• CI/CD integration
+
+Learning Objectives:
+✓ Test API endpoints thoroughly
+✓ Set up test databases
+✓ Implement integration tests
+
+■■ Common Gotchas & Advanced Concepts:
+■ Test database isolation - transaction rollback
+■ Test execution order - parallel vs serial
+■ Flaky tests - async timing issues
+■ Test data factories - avoiding brittle tests
+■ Environment-specific test failures
+
+Task 1: API Integration Test Suite
+
+Time: 3 hours
+Write integration tests for auth and CRUD APIs: test happy paths, error cases, edge cases, database state,
+transactions. Set up test database with migrations and seed data
+
+Topics to Cover:
+• Complex form handling
+• React Hook Form library
+• Form validation strategies
+• Dynamic forms and field arrays
+• Form state management
+
+Learning Objectives:
+✓ Build production-ready forms
+✓ Implement complex validation
+✓ Optimize form performance
+
+■■ Common Gotchas & Advanced Concepts:
+■ Controlled vs uncontrolled forms - performance
+■ Validation timing - onChange vs onBlur vs onSubmit
+■ Form state reset - clearing errors
+■ Dynamic fields - proper key usage
+■ File upload in forms - handling multiple files
+
+Task 1: Multi-Step Form with Validation
+
+Time: 3 hours
+
+Build a complex multi-step form: dynamic fields, conditional validation, file uploads, progress persistence, error
+handling, and accessibility. Use React Hook Form with Zod validation
+
+Topics to Cover:
+• React Error Boundaries
+• Error logging and monitoring
+• Fallback UI patterns
+• Error recovery strategies
+• Global error handling
+
+Learning Objectives:
+✓ Prevent app crashes from errors
+✓ Implement graceful error recovery
+✓ Log errors effectively
+
+■■ Common Gotchas & Advanced Concepts:
+■ Error boundaries do not catch event handler errors
+■ Error boundary placement - granularity decisions
+■ Async errors in useEffect - not caught
+■ Error boundary TypeScript typing
+■ Production error reporting - sensitive data
