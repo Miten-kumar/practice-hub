@@ -4,13 +4,15 @@ import {
   type PersonalInfo,
 } from "../schemas/personalSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+// Add to existing props interface:
+interface Props { onNext: () => void }
 
-const StepPersonalInfo = () => {
+// Change the component signature:
+const StepPersonalInfo = ({ onNext }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
   } = useForm<PersonalInfo>({
     mode: "all",
     defaultValues: JSON.parse(localStorage.getItem("personalData") || "{}"),
@@ -20,7 +22,7 @@ const StepPersonalInfo = () => {
   const onSubmit = (data: PersonalInfo) => {
     console.log(data);
     localStorage.setItem("personalData", JSON.stringify(data));
-    reset();
+    onNext();
   };
   console.log(errors);
 

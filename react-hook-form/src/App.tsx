@@ -1,11 +1,7 @@
-import StepPersonalInfo from "./components/form/StepPersonalInfo";
+import MultiStepForm from "./components/form/MultiStepForm";
 
 function App() {
-  return (
-    <>
-      <StepPersonalInfo />
-    </>
-  );
+  return <MultiStepForm />;
 }
 
 export default App;
