@@ -4,11 +4,13 @@ interface Errors {
   email?: string;
   password?: string;
 }
+  
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errors, setErrors] = useState<Errors>({});
+  
 
   const validate = () => {
     const newErrors: Errors = {};

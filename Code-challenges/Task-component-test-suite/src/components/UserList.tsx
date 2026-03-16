@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from '../utils/GlobalErrorHandler'
 
 interface User {
   id: number;
-  name: string;
+  username: string;
+  email:string;
+  password:string;
 }
 
 const UserList: React.FC = () => {
@@ -14,7 +16,7 @@ const UserList: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get<User[]>("/api/users");
+        const response = await api.get<User[]>("https://fakestoreapi.com/users");
         setUsers(response.data);
       } catch {
         setError("Failed to load users");
@@ -27,13 +29,14 @@ const UserList: React.FC = () => {
   }, []);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) 
+    throw new Error(error)
   if (users.length === 0) return <p>No users found</p>;
 
   return (
     <ul>
       {users.map((user) => (
-        <li key={user.id}>{user.name}</li>
+        <li key={user.id}>{user.username}</li>
       ))}
     </ul>
   );
