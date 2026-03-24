@@ -1,26 +1,47 @@
 import express from "express";
 import {
-  getProductsController,
+  getProductsV2Controller,
   updateProductController,
-} from "../controllers/product.controller";
-import { asyncHandler } from "../utils/asyncHandler";
+} from "../../controllers/product.controller";
+import { asyncHandler } from "../../utils/asyncHandler";
 
-const productRouter = express.Router();
+const productV2Router = express.Router();
 
 /**
  * @swagger
- * /products:
+ * /v2/products:
  *   get:
- *     summary: Get all products
- *     description: Returns the original v1 product list response.
- *     tags: [Products V1]
+ *     summary: Get paginated products
+ *     description: Returns the v2 paginated product list response with HATEOAS next and prev links.
+ *     tags: [Products V2]
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         required: false
+ *         description: Page number
+ *         schema:
+ *           type: integer
+ *           default: 1
+ *       - in: query
+ *         name: limit
+ *         required: false
+ *         description: Number of products per page
+ *         schema:
+ *           type: integer
+ *           default: 10
  *     responses:
  *       200:
  *         description: Products retrieved successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/ProductListV1Response'
+ *               $ref: '#/components/schemas/ProductListV2Response'
+ *       400:
+ *         description: Invalid pagination values
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  *       500:
  *         description: Internal server error
  *         content:
@@ -28,15 +49,15 @@ const productRouter = express.Router();
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
  */
-productRouter.get("/", asyncHandler(getProductsController));
+productV2Router.get("/", asyncHandler(getProductsV2Controller));
 
 /**
  * @swagger
- * /products/{id}:
+ * /v2/products/{id}:
  *   patch:
- *     summary: Update a product
- *     description: Partially updates a product using the v1 endpoint.
- *     tags: [Products V1]
+ *     summary: Update a product in v2
+ *     description: Updates a product using the shared update logic exposed through the v2 API.
+ *     tags: [Products V2]
  *     parameters:
  *       - in: path
  *         name: id
@@ -76,6 +97,6 @@ productRouter.get("/", asyncHandler(getProductsController));
  *             schema:
  *               $ref: '#/components/schemas/ErrorResponse'
  */
-productRouter.patch("/:id", asyncHandler(updateProductController));
+productV2Router.patch("/:id", asyncHandler(updateProductController));
 
-export default productRouter;
+export default productV2Router;

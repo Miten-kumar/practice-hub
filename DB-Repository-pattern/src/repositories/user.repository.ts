@@ -1,11 +1,11 @@
 import { User } from "../../db/entities/User";
 import { pool } from "../../db/pool";
 import { createUser, updateUser } from "../../db/sql/queries/user.queries";
+import { ApiError } from "../utils/apiError";
 
 export class UserRepository {
   async createUser(user: User) {
-    const { name, email, mobile_no, password } = user;
-    const result = await createUser.run(
+    return await createUser.run(
       {
         name: user.name,
         email: user.email,
@@ -14,12 +14,9 @@ export class UserRepository {
       },
       pool,
     );
-
-    return result;
   }
 
   async updateUser(id: number, user: User) {
-    const { name, email, mobile_no, password } = user;
     const result = await updateUser.run(
       {
         id,
@@ -30,5 +27,11 @@ export class UserRepository {
       },
       pool,
     );
+
+    if (!result || result.length === 0) {
+      throw new ApiError(404, "User not found", "USER_NOT_FOUND");
+    }
+
+    return result;
   }
 }
