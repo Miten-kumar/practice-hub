@@ -1,9 +1,9 @@
-import { Request,Response } from "express";
+import { NextFunction, Request,Response } from "express";
 import { TaskService } from "../services/task.service";
 
 export class TaskController{
 
-  async createTask(req:Request,res:Response) {
+  async createTask(req:Request,res:Response,next:NextFunction) {
     try{
       const taskService = new TaskService()
       const result = await taskService.createTask(req.body)
@@ -12,17 +12,21 @@ export class TaskController{
         .json({
           success:true,
           message:'task created',
-          data:result
+          data:result,
+          links:{
+            self:`/v1/tasks`,
+            get:`/v1/tasks/${result.id}`,
+            update:`/v1/tasks/${result.id}`,
+            delete:`/v1/tasks/${result.id}`
+          }
         })
     }
     catch(error:any){
-      res
-        .status(400)
-        .json({error:error.message})
+      next(error)
     }
   }
 
-  async getAllTasks(req:Request,res:Response){
+  async getAllTasks(req:Request,res:Response,next:NextFunction){
     try{
       const taskService = new TaskService()
       const result = await taskService.getAllTasks()
@@ -31,17 +35,24 @@ export class TaskController{
         .json({
           success:true,
           message:'tasks retrieved',
-          data:result
+          data:result.map(task => ({
+            ...task,
+            links:{
+            self:`/v1/tasks`,
+            create:`/v1/tasks`,
+            update:`/v1/tasks/${task.id}`,
+            delete:`/v1/tasks/${task.id}`
+          }
+          })),
+         
         })
     }
     catch(error:any){
-      res
-        .status(400)
-        .json({error:error.message})
+      next(error)
     }
   }
 
-  async getTaskById(req:Request,res:Response){
+  async getTaskById(req:Request,res:Response,next:NextFunction){
     try{
       const taskService = new TaskService()
       const result = await taskService.getTaskById(parseInt(req.params.id as string))
@@ -51,17 +62,22 @@ export class TaskController{
         .json({
           success:true,
           message:'task retrieved',
-          data:result
+          data:result,
+          links:{
+            self:`/v1/tasks`,
+            create:`/v1/tasks`,
+            update:`/v1/tasks/${result.id}`,
+            delete:`/v1/tasks/${result.id}`
+          }
+          
         })
       }
       catch(error:any){
-        res
-          .status(404)
-          .json({error:'task not found'})
+        next(error)
       }
     }
 
-    async updateTask(req:Request,res:Response){
+    async updateTask(req:Request,res:Response,next:NextFunction){
       try{
         const taskService = new TaskService()
         const result = await taskService.updateTask(parseInt(req.params.id as string),req.body)
@@ -70,17 +86,14 @@ export class TaskController{
           .json({
             success:true,
             message:'task updated',
-            data:result
           })
         }
       catch(error:any){
-        res
-          .status(404)
-          .json({error:'task not found'})
+        next(error)
       }
     }
 
-    async deleteTask(req:Request,res:Response){
+    async deleteTask(req:Request,res:Response,next:NextFunction){
       try{
         const taskService = new TaskService() 
         await taskService.deleteTask(parseInt(req.params.id as string))
@@ -92,9 +105,7 @@ export class TaskController{
           })
         }
       catch(error:any){
-        res
-          .status(404)
-          .json({error:'task not found'})
+        next(error)
       }
     }
 }
