@@ -1,0 +1,7 @@
+{"level":"error","message":"error occured Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"task-service","status":400,"timestamp":"2026-03-27T12:20:47.898Z"}
+{"level":"error","message":"error occured Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"task-service","status":400,"timestamp":"2026-03-27T12:21:57.682Z"}
+{"level":"error","message":"error occured Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"task-service","status":400,"timestamp":"2026-03-27T12:22:32.517Z"}
+{"error":"Cannot read properties of undefined (reading 'id')","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T12:43:38.059Z"}
+{"level":"error","message":"error occured Cannot read properties of undefined (reading 'id')","service":"task-service","timestamp":"2026-03-27T12:43:38.060Z"}
+{"error":"Task already exists","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T12:48:59.995Z"}
+{"code":"TASK_EXISTS","level":"error","message":"error occured Task already exists","service":"task-service","status":409,"timestamp":"2026-03-27T12:48:59.996Z"}

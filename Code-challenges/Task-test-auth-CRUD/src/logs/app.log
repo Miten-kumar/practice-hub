@@ -1,0 +1,63 @@
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:01.605Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:06.161Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:13.073Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:15.582Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:16.295Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:17.805Z"}
+{"id":"::1","level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:05:50.266Z"}
+{"id":"::1","level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:06:10.934Z"}
+{"id":"/v1/tasks","level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:06:35.384Z"}
+{"id":"/v1/tasks","level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:06:47.746Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:08:17.183Z","url":"/v1/tasks"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:11:04.860Z","url":"/v1/tasks"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:11:22.954Z","url":"/v1/tasks"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:15:56.906Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","name":"task 5","service":"task-service","timestamp":"2026-03-27T11:15:56.908Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:19:19.953Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","name":"task 6","service":"task-service","timestamp":"2026-03-27T11:19:19.954Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:22:31.611Z","url":"/v1/tasks?id=86"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:22:31.613Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:22:57.464Z","url":"/v1/tasks?id=86"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:22:57.465Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:23:23.267Z","url":"/v1/tasks?id=86"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:23:23.267Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:24:23.333Z","url":"/v1/tasks?id="}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:24:23.333Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:24:31.490Z","url":"/v1/tasks?id=81"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:24:31.490Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:25:19.148Z","url":"/v1/tasks?id=234"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:25:19.148Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:25:39.832Z","url":"/v1/tasks"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:25:39.832Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:28:36.850Z","url":"/v1/tasks/?id=81"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:28:36.850Z"}
+{"level":"info","message":"get task by id request","service":"task-service","timestamp":"2026-03-27T11:29:14.854Z","url":"/v1/tasks/:id?id=81"}
+{"level":"info","message":"getting task started","service":"task-service","task_id":null,"timestamp":"2026-03-27T11:29:14.854Z"}
+{"level":"info","message":"get task by id request","service":"task-service","timestamp":"2026-03-27T11:29:25.689Z","url":"/v1/tasks/81"}
+{"level":"info","message":"getting task started","service":"task-service","task_id":81,"timestamp":"2026-03-27T11:29:25.689Z"}
+{"level":"info","message":"update task request","service":"task-service","timestamp":"2026-03-27T11:33:23.012Z","url":"/v1/tasks/81"}
+{"level":"info","message":"update task started","service":"task-service","task_id":81,"timestamp":"2026-03-27T11:33:23.013Z"}
+{"level":"info","message":"task updated","service":"task-service","task_name":"new tsk:update","timestamp":"2026-03-27T11:33:23.034Z"}
+{"level":"info","message":"delete task request","service":"task-service","timestamp":"2026-03-27T11:36:18.512Z","url":"/v1/tasks/81"}
+{"level":"info","message":"delete task started","service":"task-service","task_id":81,"timestamp":"2026-03-27T11:36:18.513Z"}
+{"level":"info","message":"task deleted","service":"task-service","task_id":81,"timestamp":"2026-03-27T11:36:18.528Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:41:31.761Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","service":"task-service","timestamp":"2026-03-27T11:41:31.763Z"}
+{"error":"name required","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T11:41:31.763Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:50:51.472Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","service":"task-service","timestamp":"2026-03-27T11:50:51.473Z"}
+{"error":"name required","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T11:50:51.474Z"}
+{"code":"INVALID_INPUT","level":"error","message":"error occured name required","service":"task-service","status":400,"timestamp":"2026-03-27T11:50:51.474Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T11:53:17.453Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","service":"task-service","timestamp":"2026-03-27T11:53:17.454Z"}
+{"error":"name required","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T11:53:17.455Z"}
+{"code":"INVALID_INPUT","level":"error","message":"error occured name required","service":"task-service","status":400,"timestamp":"2026-03-27T11:53:17.455Z"}
+{"level":"error","message":"error occured Bad control character in string literal in JSON at position 16 (line 2 column 15)","service":"task-service","status":400,"timestamp":"2026-03-27T11:53:23.942Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:56:16.516Z","url":"/v1/tasks"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:56:16.518Z"}
+{"level":"info","message":"all tasks retrived","service":"task-service","timestamp":"2026-03-27T11:56:16.524Z"}
+{"duration":11,"level":"info","message":"Request completed","method":"GET","service":"task-service","status":null,"timestamp":"2026-03-27T11:56:16.527Z"}
+{"level":"info","message":"get all tasks request","service":"task-service","timestamp":"2026-03-27T11:56:57.065Z","url":"/v1/tasks"}
+{"level":"info","message":"getting all tasks started","service":"task-service","timestamp":"2026-03-27T11:56:57.066Z"}
+{"level":"info","message":"all tasks retrived","service":"task-service","timestamp":"2026-03-27T11:56:57.071Z"}
+{"duration":9,"level":"info","message":"Request completed","method":"GET","service":"task-service","status":200,"timestamp":"2026-03-27T11:56:57.074Z"}

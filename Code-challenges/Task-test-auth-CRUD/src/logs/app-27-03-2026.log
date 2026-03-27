@@ -1,0 +1,24 @@
+{"level":"error","message":"error occured Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"task-service","status":400,"timestamp":"2026-03-27T12:20:47.898Z"}
+{"level":"error","message":"error occured Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"task-service","status":400,"timestamp":"2026-03-27T12:21:57.682Z"}
+{"level":"error","message":"error occured Expected property name or '}' in JSON at position 6 (line 2 column 5)","service":"task-service","status":400,"timestamp":"2026-03-27T12:22:32.517Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T12:43:38.058Z","url":"/v1/tasks"}
+{"error":"Cannot read properties of undefined (reading 'id')","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T12:43:38.059Z"}
+{"level":"error","message":"error occured Cannot read properties of undefined (reading 'id')","service":"task-service","timestamp":"2026-03-27T12:43:38.060Z"}
+{"duration":5,"level":"info","message":"Request completed","method":"POST","service":"task-service","status":500,"timestamp":"2026-03-27T12:43:38.062Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T12:44:43.766Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","name":"taskkk","service":"task-service","timestamp":"2026-03-27T12:44:43.767Z"}
+{"duration":20,"level":"info","message":"Request completed","method":"POST","service":"task-service","status":201,"timestamp":"2026-03-27T12:44:43.786Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T12:48:59.989Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","name":"taskkk","service":"task-service","timestamp":"2026-03-27T12:48:59.990Z"}
+{"error":"Task already exists","level":"error","message":"create task request failed","service":"task-service","timestamp":"2026-03-27T12:48:59.995Z"}
+{"code":"TASK_EXISTS","level":"error","message":"error occured Task already exists","service":"task-service","status":409,"timestamp":"2026-03-27T12:48:59.996Z"}
+{"correlationId":"61056a20-3e8c-4fb2-b3d1-4fb66613e274","duration":10,"level":"info","message":"Request completed","method":"POST","service":"task-service","status":409,"timestamp":"2026-03-27T12:48:59.998Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T12:49:03.608Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","name":"taskkk1","service":"task-service","timestamp":"2026-03-27T12:49:03.608Z"}
+{"correlationId":"ed2cc11d-91fb-4328-9756-aa73bfe6defe","duration":8,"level":"info","message":"Request completed","method":"POST","service":"task-service","status":201,"timestamp":"2026-03-27T12:49:03.617Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T13:01:29.621Z","url":"/v1/tasks"}
+{"level":"info","message":"task creation started","name":"taskkk12","service":"task-service","timestamp":"2026-03-27T13:01:29.622Z"}
+{"correlationId":"cbc666df-c5cf-40c6-94c2-e6ffa07d3971","duration":22,"level":"info","message":"Request completed","method":"POST","service":"task-service","status":201,"timestamp":"2026-03-27T13:01:29.642Z"}
+{"level":"info","message":"create task request","service":"task-service","timestamp":"2026-03-27T13:23:27.872Z","url":"/v1/tasks"}
+{"id":"****","level":"info","message":"task creation started","name":"****","service":"task-service","timestamp":"2026-03-27T13:23:27.874Z"}
+{"correlationId":"6aa30936-bac8-478f-b10e-f892f3171f29","duration":21,"level":"info","message":"Request completed","method":"POST","service":"task-service","status":201,"timestamp":"2026-03-27T13:23:27.893Z"}

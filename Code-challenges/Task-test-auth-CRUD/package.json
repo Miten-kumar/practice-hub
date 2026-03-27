@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@sentry/node": "^10.46.0",
     "bcryptjs": "^3.0.3",
     "class-validator": "^0.15.1",
     "cors": "^2.8.6",
@@ -8,7 +9,10 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.20.0",
     "tsx": "^4.21.0",
-    "typeorm": "^0.3.28"
+    "typeorm": "^0.3.28",
+    "uuid": "^13.0.0",
+    "winston": "^3.19.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "name": "task-test-auth-crud",
   "version": "1.0.0",
@@ -22,6 +26,7 @@
     "@types/node": "^25.4.0",
     "@types/pg": "^8.18.0",
     "@types/supertest": "^7.2.0",
+    "@types/winston": "^2.4.4",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "node-pg-migrate": "^8.0.4",
