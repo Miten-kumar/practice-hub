@@ -8,9 +8,5 @@ AppDataSource.initialize()
     app.listen(3000, () => {
       console.log("server is running on port 3000");
     });
-
-    // console.log(
-    //   "Here you can setup and run express / fastify / any other framework.",
-    // );
   })
   .catch((error) => console.log(error));

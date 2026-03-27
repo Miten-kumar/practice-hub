@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Orders } from "./Orders.js";
 
 @Entity()
 export class Payments {
@@ -7,6 +14,10 @@ export class Payments {
 
   @Column({ type: "int" })
   order_id!: number;
+
+  @OneToOne(() => Orders, (order) => order.payment)
+  @JoinColumn({ name: "order_id" })
+  order!: Orders;
 
   @Column({ type: "enum", enum: ["pending", "completed", "failed"] })
   status!: "pending" | "completed" | "failed";

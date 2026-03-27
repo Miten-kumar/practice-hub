@@ -1,9 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+} from "typeorm";
+import { Orders } from "./Orders.js";
 
 @Entity()
 export class Users {
   @PrimaryGeneratedColumn()
-  id!: number;
+  user_id!: number;
 
   @Column({ type: "varchar" })
   firstName!: string;
@@ -13,4 +19,7 @@ export class Users {
 
   @Column({ type: "varchar" })
   email!: string;
+
+  @OneToMany(() => Orders, (order) => order.user)
+  orders!: Orders[];
 }
