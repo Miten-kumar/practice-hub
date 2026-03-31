@@ -181,3 +181,99 @@ Learning Objectives:
 ✓ Implement type-safe database operations
 ✓ Manage database schema changes
 ✓ Handle concurrent database operations
+
+■■ Common Gotchas & Advanced Concepts:
+■ Connection pool configuration - min/max/idle settings
+■ Deadlocks in transactions - detection and prevention
+■ Prepared statement memory leaks
+■ Time zone handling in PostgreSQL
+■ Cascade delete implications
+
+■ Coding Challenge(s):
+Task 1: Database Repository Pattern
+Time: 3 hours
+Implement a type-safe repository pattern for the e-commerce schema. Include: transaction support, connection
+pooling, migration scripts, and error handling for constraint violations
+
+
+day 8
+■ Learning Time: 3 hours
+Topics to Cover:
+• JWT token structure and security
+• Password hashing with bcrypt
+• Refresh token rotation
+• Role-based access control (RBAC)
+• Secure cookie handling
+
+Learning Objectives:
+✓ Implement secure authentication
+✓ Understand JWT security implications
+✓ Build authorization middleware
+
+Task 1: Complete Auth System
+Time: 3 hours
+Build a production-ready auth system: register, login, refresh tokens, password reset, email verification,
+role-based middleware. Include rate limiting on auth endpoints
+
+day 9
+■ Learning Time: 2.5 hours
+Topics to Cover:
+• Request validation with Zod
+• Custom error classes
+• Global error handling middleware
+• API response standardization
+• Logging best practices
+
+Learning Objectives:
+✓ Validate all API inputs
+✓ Implement consistent error responses
+✓ Create production-grade error handling
+
+■■ Common Gotchas & Advanced Concepts:
+■ Validation error messages - security vs UX
+■ Async error propagation in Express
+■ Error stack traces in production
+■ Logging sensitive data - PII concerns
+■ HTTP status codes - proper usage
+
+
+day 10
+■ Learning Time: 3 hours
+
+Topics to Cover:
+• Redux fundamentals and state management
+• Redux Toolkit - modern Redux
+• createSlice and createAsyncThunk
+• TypeScript with Redux Toolkit
+• Redux DevTools integration
+
+Learning Objectives:
+✓ Implement Redux for complex state
+✓ Use Redux Toolkit best practices
+✓ Type Redux store properly
+
+
+
+Topics to Cover:
+• Redux middleware concepts
+• RTK Query for data fetching
+• Optimistic updates
+• Cache invalidation strategies
+• Redux Toolkit listeners
+
+Learning Objectives:
+✓ Handle async operations efficiently
+✓ Implement caching strategies
+✓ Manage complex side effects
+
+Topics to Cover:
+• React.memo and memoization strategies
+• Virtual list and windowing (react-window)
+• Code splitting with React.lazy
+• Bundle optimization
+• React DevTools Profiler
+
+Learning Objectives:
+✓ Identify performance bottlenecks
+✓ Optimize large lists and renders
+✓ Reduce bundle size effectively
