@@ -1,5 +1,6 @@
 import { Tasks } from '../entity/task'
 import { getTaskRepository } from '../repositories/task.repository'
+import { In } from 'typeorm'
  
 export class TaskService{
 
@@ -34,6 +35,18 @@ export class TaskService{
       throw new Error('task not found')
     }
     return task
+  }
+
+  async getTasksByIds(ids: number[]) {
+  const taskRepository = getTaskRepository();
+ 
+  const tasks = await taskRepository.findBy({ id: In(ids) });
+ 
+  if(tasks.length === 0){
+  throw new Error('tasks not found')
+  }
+ 
+  return tasks;
   }
 
   async updateTask(id:number,taskData:Partial<Tasks>) {

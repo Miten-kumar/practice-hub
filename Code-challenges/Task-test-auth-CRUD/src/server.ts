@@ -3,28 +3,39 @@ import "reflect-metadata";
 import app from "./app";
 import { ApolloServer } from "@apollo/server";
 import { typeDefs } from "./schema/task.schema";
-import { expressMiddleware } from "@as-integrations/express5";
-import { resolvers } from "./resolvers/task.resolver";
+import { expressMiddleware } from "@as-integrations/express5"
+import { Context, resolvers } from "./resolvers/task.resolver";
 import { verifyToken } from "./utils/jwt";
+import { createTaskLoader } from "./loaders/task.loader";
+import depthLimit from 'graphql-depth-limit';
 
 const PORT = process.env.port || 3000;
 
-const server = new ApolloServer({
+const server = new ApolloServer<Context>({
   typeDefs,
   resolvers,
-  context: ({ req }) => {
-    const token = req.headers.authorization;
+  validationRules: [depthLimit(5)]
 
-    const user = verifyToken(token); 
-
-    return { user };
-  },
 });
 
 await server.start();
 
-app.use("/graphql", expressMiddleware(server));
-
+app.use(
+  "/graphql",
+  expressMiddleware (server, {
+    context: async ({ req }) => {
+      const token = req.headers.authorization;
+      const user = token ? verifyToken(token) : null;
+ 
+      return {
+        user,
+        loaders: {
+          task: createTaskLoader(),
+        },
+      };
+    },
+  }),
+);
 AppDataSource.initialize()
   .then(() => {
     console.log("connection successful");
