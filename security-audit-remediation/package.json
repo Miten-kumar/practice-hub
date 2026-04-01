@@ -1,0 +1,26 @@
+{
+  "name": "security-audit-remediation",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "npx tsx --watch src/index.ts",
+    "test": "echo \"No automated tests configured\""
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.28"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "typescript": "^6.0.2"
+  }
+}
