@@ -1,6 +1,11 @@
 import { getPostRepository } from "../repositories/PostRepository";
 import { getUserRepository } from "../repositories/UserRepository";
 
+type PostUpdateInput = {
+  title?: string;
+  content?: string;
+};
+
 export class PostService {
   async createPost(userId: number, title: string, content: string) {
     const user = await getUserRepository().findOneBy({ id: userId });
@@ -27,7 +32,7 @@ export class PostService {
     });
   }
 
-  async updatePost(id: number, data: any) {
+  async updatePost(id: number, data: PostUpdateInput) {
     const post = await getPostRepository().findOneBy({ id });
 
     if (!post) throw new Error("Post not found");

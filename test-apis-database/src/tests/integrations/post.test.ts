@@ -1,9 +1,10 @@
 import request from "supertest";
 import app from "../helpers/testApp";
 import { seedUser } from "../seed/seedTestDB";
+import { Users } from "../../entities/User";
 
 describe("Post API", () => {
-  let user: any;
+  let user: Users;
 
   beforeEach(async () => {
     user = await seedUser();
