@@ -1,7 +1,8 @@
 import request from 'supertest'
-import app from '../../app'
-import { TestDataSource } from '../../test-data-source'
-import { Tasks } from '../../entity/task'
+import app from '../../app.js'
+import { TestDataSource } from '../../test-data-source.js'
+import { Tasks } from '../../entity/task.js'
+import '../setup/setup.js'
 
 describe('task controller',() =>{
 

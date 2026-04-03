@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import { MinLength,Length } from "class-validator";
+import { Length } from "class-validator";
 
 export enum Gender {
     MALE = "male",

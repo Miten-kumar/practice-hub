@@ -1,6 +1,6 @@
-import { AppDataSource } from "../data-source";
-import { TestDataSource } from "../test-data-source";
-import { Tasks } from "../entity/task";
+import { AppDataSource } from "../data-source.js";
+import { TestDataSource } from "../test-data-source.js";
+import { Tasks } from "../entity/task.js";
 
 export const getTaskRepository = () => {
   if (TestDataSource.isInitialized) {

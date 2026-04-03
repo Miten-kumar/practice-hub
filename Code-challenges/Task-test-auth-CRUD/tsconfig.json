@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es2024", 
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2024",
     "strict": true,
     "verbatimModuleSyntax": false,
     "declaration": true,
@@ -9,11 +10,10 @@
     "declarationMap": true,
     // "rootDir": "src",
     "outDir": "dist",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports":true,
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true
-
+    "esModuleInterop": true,
+    "isolatedModules": true
   }
 }

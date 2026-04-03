@@ -1,8 +1,8 @@
-import { AppDataSource } from "./data-source"
+import { AppDataSource } from "./data-source.js"
 import "reflect-metadata";
-import app from "./app";
+import app from "./app.js";
 
-const PORT = process.env.port || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 AppDataSource.initialize()
   .then(() => {
@@ -12,7 +12,7 @@ AppDataSource.initialize()
       console.log("server is running on", PORT);
     });
   })
-  .catch((err) => {
+  .catch((err: unknown) => {
     console.log(err);
   });
 

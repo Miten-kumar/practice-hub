@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { DataSource } from "typeorm";
-import { Tasks } from "./entity/task";
-import { Users } from "./entity/user";
+import { Tasks } from "./entity/task.js";
+import { Users } from "./entity/user.js";
  
 dotenv.config()
  

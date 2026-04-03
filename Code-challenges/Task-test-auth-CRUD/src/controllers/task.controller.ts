@@ -1,5 +1,5 @@
 import { Request,Response } from "express";
-import { TaskService } from "../services/task.service";
+import { TaskService } from "../services/task.service.js";
 
 export class TaskController{
 
@@ -54,7 +54,7 @@ export class TaskController{
           data:result
         })
       }
-      catch(error:any){
+      catch{
         res
           .status(404)
           .json({error:'task not found'})
@@ -73,7 +73,7 @@ export class TaskController{
             data:result
           })
         }
-      catch(error:any){
+      catch{
         res
           .status(404)
           .json({error:'task not found'})
@@ -91,7 +91,7 @@ export class TaskController{
             message:'task deleted'
           })
         }
-      catch(error:any){
+      catch{
         res
           .status(404)
           .json({error:'task not found'})

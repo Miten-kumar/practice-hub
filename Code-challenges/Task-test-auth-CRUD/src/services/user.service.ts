@@ -1,5 +1,5 @@
-import { userRepository } from "../repositories/user.repository";
-import { Users } from "../entity/user";
+import { userRepository } from "../repositories/user.repository.js";
+import { Users } from "../entity/user.js";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken";
 
@@ -23,7 +23,7 @@ export class AuthService {
 
         await userRepository.save(newUser);
 
-        const { password, ...userWithoutPassword } = newUser;
+        const { password: _password, ...userWithoutPassword } = newUser;
         return userWithoutPassword;
     }
 

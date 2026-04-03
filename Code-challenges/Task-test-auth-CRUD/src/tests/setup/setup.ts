@@ -1,5 +1,5 @@
-import { Tasks } from "../../entity/task"
-import { TestDataSource } from "../../test-data-source"
+import { Tasks } from "../../entity/task.js"
+import { TestDataSource } from "../../test-data-source.js"
 
 beforeAll(async () => {
   if (!TestDataSource.isInitialized) {

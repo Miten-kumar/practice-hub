@@ -1,5 +1,5 @@
-import { Tasks } from '../entity/task'
-import { getTaskRepository } from '../repositories/task.repository'
+import { Tasks } from "../entity/task.js"
+import { getTaskRepository } from "../repositories/task.repository.js"
  
 export class TaskService{
 

@@ -1,0 +1,54 @@
+name: Full CI/CD Pipeline
+
+on:
+  pull_request:
+    branches: feat-test-Auth-CRUD
+
+  push:
+    branches: feat-test-Auth-CRUD
+
+env:
+  IMAGE_NAME: auth-crud-app
+
+jobs:
+  test:
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+
+
+  build:
+    needs: test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    outputs:
+      image_tag: ${{ steps.meta.outputs.tag }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Image Tag
+        id: meta
+        run: echo "tag=${GITHUB_SHA}" >> $GITHUB_OUTPUT
+
+      # - name: Login to Docker Hub
+      #   run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      # - name: Build Image
+      #   run: docker build -t $IMAGE_NAME:${{ steps.meta.outputs.tag }} .
+
+      # - name: Push Image
+      #   run: docker push $IMAGE_NAME:${{ steps.meta.outputs.tag }}
+
+  
