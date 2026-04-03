@@ -1,0 +1,132 @@
+/* styles.css */
+
+/* Reset-ish */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+
+/* Button */
+.button {
+  background-color: #005fcc;
+  color: #ffffff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0047a3;
+}
+
+/* 🔥 Focus visible (VERY IMPORTANT) */
+.button:focus-visible,
+.input:focus-visible,
+.table button:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* Search Panel */
+.search-panel {
+  margin-top: 12px;
+}
+
+.input {
+  margin-top: 6px;
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+/* Table */
+.table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th {
+  text-align: left;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Row hover */
+.table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Action button inside table */
+.table button {
+  background-color: #0a7f3f;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+}
+
+.table button:hover {
+  background-color: #086a35;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 300px;
+  z-index: 1000;
+}
+
+/* Modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Modal content */
+.modal h2 {
+  margin-top: 0;
+}
+
+/* Live region (visually subtle but readable) */
+.live-region {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Skip link (bonus, professional touch) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 8px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
