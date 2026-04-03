@@ -3,9 +3,13 @@ name: Full CI/CD Pipeline
 on:
   pull_request:
     branches: feat-test-Auth-CRUD
+    paths: 'Code-challenges/Task-test-auth-CRUD/**'
 
   push:
     branches: feat-test-Auth-CRUD
+    paths: 'Code-challenges/Task-test-auth-CRUD/**'
+
+
 
 env:
   IMAGE_NAME: auth-crud-app
@@ -23,11 +27,12 @@ jobs:
           node-version: 20
 
       - run:
-        working-directory: Code-challenges/Task-test-auth-CRUD
+        working-directory: ./Code-challenges/Task-test-auth-CRUD
 
       - run: npm ci
       - run: npm run lint
       - run: npm test
+
 
   build:
     needs: test
@@ -55,3 +60,5 @@ jobs:
 
       # - name: Push Image
       #   run: docker push $IMAGE_NAME:${{ steps.meta.outputs.tag }}
+
+  

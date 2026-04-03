@@ -9,7 +9,7 @@ AppDataSource.initialize()
     console.log("connection successful");
 
     app.listen(PORT, () => {
-      console.log("server is running on : ", PORT);
+      console.log("server is running on", PORT);
     });
   })
   .catch((err: unknown) => {
