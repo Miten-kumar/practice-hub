@@ -9,7 +9,7 @@ function ProductList({ products }: ProductListProps) {
     <div className="grid">
       {products.map((product) => (
         <div key={product.id} className="card">
-          <img alt={product.title} src={product.image} />
+          <img alt={product.title} src={product.image} loading="lazy" />
           <h3>{product.title}</h3>
           <p>{product.description}</p>
           <p>₹{product.price}</p>

@@ -21,7 +21,8 @@ body {
 }
 
 .card img {
-  width: 100%;
+  width: 320px;
+  height: 224px;
   display: block;
 }
 

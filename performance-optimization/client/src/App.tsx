@@ -2,41 +2,20 @@ import { useEffect, useState } from "react";
 import ProductList from "./components/ProductList";
 import type { Product } from "./types/product";
 
-type ProductApiItem = {
-  id: number;
-  title: string;
-  image: string | null;
-  price: number | string;
-  description: string | null;
-};
-
-type ProductsApiResponse = {
-  data: ProductApiItem[];
-};
-
-function normalizeProduct(product: ProductApiItem): Product {
-  return {
-    id: product.id,
-    title: product.title,
-    image:
-      product.image || `https://picsum.photos/1200/900?random=${product.id}`,
-    price: Number(product.price),
-    description: product.description || "No description available.",
-  };
-}
-
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [query, setQuery] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const controller = new AbortController();
 
     const timer = window.setTimeout(async () => {
+      setLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:3001/products?limit=50",
+          "http://localhost:3001/products?limit=10",
           {
             signal: controller.signal,
           },
@@ -46,14 +25,16 @@ function App() {
           throw new Error(`Request failed with status ${response.status}`);
         }
 
-        const payload = (await response.json()) as ProductsApiResponse;
-        setProducts(payload.data.map(normalizeProduct));
+        const payload = await response.json();
+        setProducts(payload.data);
       } catch (fetchError) {
         if ((fetchError as Error).name !== "AbortError") {
           setError("Unable to load products.");
         }
+      } finally {
+        setLoading(false);
       }
-    }, 2000);
+    }, 0);
 
     return () => {
       controller.abort();
@@ -61,13 +42,17 @@ function App() {
     };
   }, []);
 
-  for (let i = 0; i < 5000000; i += 1) {
-    Math.sqrt(i);
-  }
-
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(query.toLowerCase()),
   );
+
+  if (loading) {
+    return (
+      <>
+        <h1>Loading</h1>
+      </>
+    );
+  }
 
   return (
     <div className="page">

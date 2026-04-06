@@ -47,3 +47,29 @@ For a production-style Lighthouse run:
 npm run build
 npm run preview
 ```
+
+## Performance budgets
+
+Bundle budgets are enforced with:
+
+```bash
+npm run build:perf
+```
+
+Current limits:
+
+- JavaScript gzip: 170 KB
+- CSS gzip: 10 KB
+
+Lighthouse assertions are configured in `lighthouserc.json`:
+
+- Performance score: at least 90
+- LCP: at most 2500 ms
+- CLS: at most 0.1
+- TBT: at most 200 ms
+
+Run Lighthouse CI with:
+
+```bash
+npm run lhci
+```
