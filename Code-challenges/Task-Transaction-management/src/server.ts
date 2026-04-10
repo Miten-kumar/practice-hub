@@ -1,27 +1,32 @@
-import  express  from "express"
-import dotenv from "dotenv"
-import { AppDataSource } from "./data-source"
-import "reflect-metadata"; 
+import express from "express";
+import dotenv from "dotenv";
+import "reflect-metadata";
+import { AppDataSource } from "./data-source";
+import orderRouter from "./routes/order.routes";
 
+dotenv.config();
 
-const app = express()
+const app = express();
 app.use(express.json());
-dotenv.config()
+app.use("/orders", orderRouter);
 
 const checkConnection = async () => {
-    try{
-        await AppDataSource.initialize()
-        console.log("connection sucessfull")
+  try {
+    if (!AppDataSource.isInitialized) {
+      await AppDataSource.initialize();
     }
-    catch(error){
-        console.log(error)
-    }
-}
+    console.log("connection successful");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 await checkConnection();
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT,() =>{
-    console.log("server is running on",PORT)
-})
+app.listen(PORT, () => {
+  console.log("server is running on", PORT);
+});
+
+export default app;
