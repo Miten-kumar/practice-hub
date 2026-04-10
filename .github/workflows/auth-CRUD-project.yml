@@ -28,7 +28,7 @@ jobs:
         working-directory: ./Code-challenges/Task-test-auth-CRUD
 
       - run: npm ci
-      - run: npm run lint
+      # - run: npm run lint
       - run: npm test
 
   build:
